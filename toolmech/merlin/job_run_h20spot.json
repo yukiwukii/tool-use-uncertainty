@@ -1,0 +1,65 @@
+{
+ "name": "toolmech-gpu-runner-h20spot",
+ "description": "toolmech (PLAN.md): When2Tool uncertainty/tool-use experiments; task runner per GPU fed from HDFS queue",
+ "job_config": {
+  "job_template_ref": {
+   "name": "ImageEmbed",
+   "version": "2",
+   "input_config": {},
+   "output_config": {}
+  },
+  "job_template_config": {
+   "entrypoint_full_script": "bash /mnt/hdfs/nadya.wangsajaya/toolmech/code/toolmech/merlin/job_entry.sh",
+   "git_repo": {
+    "repo_name": "nadya.wangsajaya/multimodal-graph",
+    "branch_name": "behavior-edges-build",
+    "mnt": "/opt/tiger/multimodal-graph",
+    "use_latest_commit": true
+   },
+   "image_meta": {
+    "image_source": "vid",
+    "image_vid": "d8vk90s7ebmldi46dnm0",
+    "need_build": true
+   }
+  }
+ },
+ "compliance": {
+  "is_contain_tiktok_data": "no"
+ },
+ "resource_config": {
+  "resource_backend": "arnold",
+  "arnold_resource_config": {
+   "cluster_select_mode": "single",
+   "cluster_ids": [
+    21
+   ],
+   "group_id": 130,
+   "roles": [
+    {
+     "name": "worker",
+     "gpu_type": "NVIDIA_H20",
+     "cpu": 23,
+     "memory_mb": 245760,
+     "gpu": 1,
+     "queue_name": "compute-288-my2-gpuspot1-default-mlsys.public.inc-guarantee",
+     "num": 1
+    }
+   ],
+   "preemptible": false
+  }
+ },
+ "attachments": [
+  {
+   "kind": "hdfs_volume",
+   "hdfs_volume_attachment": {
+    "hdfs_volumes": [
+     {
+      "path": "hdfs://harunasg/home/byte_ecom_risk_control/user/nadya.wangsajaya",
+      "access_mode": "RW",
+      "mnt": "/mnt/hdfs/nadya.wangsajaya"
+     }
+    ]
+   }
+  }
+ ]
+}

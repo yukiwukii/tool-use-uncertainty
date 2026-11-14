@@ -1,0 +1,11 @@
+vllm==0.8.5
+transformers==4.55.2
+accelerate==1.13.0
+datasets>=3
+scikit-learn
+scipy
+pandas
+pyarrow
+pyyaml
+matplotlib
+pytest

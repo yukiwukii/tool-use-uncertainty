@@ -1,0 +1,7 @@
+.venv/
+.hf_cache/
+__pycache__/
+*.pyc
+# upstream harness: clone github.com/Trustworthy-ML-Lab/when2tool @ ef0cf1e and dump HF cesun/When2Tool into when2tool/data/
+when2tool/
+.gpu_job

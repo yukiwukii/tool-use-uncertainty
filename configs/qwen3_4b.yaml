@@ -1,0 +1,53 @@
+# Single source of truth for every toolmech step. Changing any value changes the
+# config hash embedded in artefact filenames (see toolmech/config.py).
+model_key: qwen3-4b-instruct
+model_id: Qwen/Qwen3-4B-Instruct-2507
+seed: 0
+
+data:
+  train: when2tool/data/tasks_v1_train.json
+  test: when2tool/data/tasks_v1_test.json
+  multihop_train: when2tool/data/tasks_v1_multihop_train.json
+  multihop_test: when2tool/data/tasks_v1_multihop_test.json
+
+# vLLM settings (shared GPU: keep memory fraction modest so HF jobs can co-exist)
+vllm:
+  gpu_memory_utilization: 0.45
+  max_model_len: 16384
+  max_rounds: 12
+
+# M2 sampling (no-tool answers, call-rate samples)
+sampling:
+  temperature: 1.0
+  top_p: 1.0
+  max_new_tokens: 1024
+  k_notool: 10          # samples for fail_rate and SE
+  n_call_samples: 20    # samples for call_rate
+
+# M1 / E2
+tul:
+  min_spearman: 0.7
+  max_late_call_share: 0.10
+  late_call_window: 8   # first-N-token window if TUL must be redefined
+
+# M3 / M4 / E3
+probes:
+  logistic_C: 1.0e-4    # When2Tool train_probe.py uses reg=10000 -> C=1/reg
+  ridge_alpha: 1.0e+3
+  n_bootstrap: 100
+  n_null: 100
+  se_min_spearman: 0.5
+
+# M5 / E4
+steering:
+  ks: [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+  n_best_layers: 3
+  n_call_samples: 20
+  manip_tasks_per_tier: 100
+  k_notool: 10
+
+# M6 / E5
+conversations:
+  k_post: 10
+
+results_dir: results
