@@ -2,16 +2,16 @@
 
 Inputs:  results/e2/resid_<split>_<mode>.<hash>.pt   (last-prompt-token, pre-norm, all layers)
          results/e1/labels.<hash>.parquet
-         results/e2/tul_<split>_<mode>.<hash>.parquet (only for d_act^dm in `current`)
 Outputs: results/e3/directions_<mode>.<hash>.pt      {name: [L, d] unit vectors, "meta": ...}
          results/e3/decoding_<mode>.<hash>.parquet   one row per (layer, label, method, scope)
 
 Directions are fit on the train split and evaluated on test. Geometry directions
 (PLAN.md M3/M4): difference in means for binary labels, ridge for continuous labels,
-and the stratified differences in means d_SE^dm and d_act^dm (rev. Nov 14).
+and the stratified differences in means d_SE^dm and d_act^dm (rev. Nov 14; d_act^dm in
+sparse_tool only). Tool use is measured from replies (act, call_rate), not TUL.
 Logistic probes are fit for decoding only.
 
-Usage:  python -m toolmech.directions [--modes sparse_tool,current] [--tul_window_current 1]
+Usage:  python -m toolmech.directions [--modes sparse_tool,current]
 """
 import argparse
 import os
@@ -40,16 +40,13 @@ def load_split(cfg, split, mode, labels):
     return X, lab
 
 
-def add_derived_labels(lab, mode, tul=None, tul_window=1):
-    """Mode-specific act/call columns, tier codes, residualised SE labels (fit on train)."""
+def add_derived_labels(lab, mode):
+    """Mode-specific act/call columns and tier codes (labels come from replies, not TUL)."""
     lab = lab.copy()
     lab["act"] = lab[f"act_{mode}"]
     lab["call_rate"] = lab[f"call_rate_{mode}"]
     lab["tier_num"] = lab["tier"].map(TIER_NUM)
     lab["diff"] = lab["tier"].map({"easy": 0.0, "hard": 1.0})          # medium -> NaN (held out)
-    if tul is not None:
-        lab = lab.merge(tul[["id", f"tul_{tul_window}"]].rename(columns={f"tul_{tul_window}": "tul"}),
-                        on="id", how="left")
     return lab
 
 
@@ -150,8 +147,8 @@ def _se_dm(X, lab, cfg):
 
 
 def _act_dm(X, lab, cfg):
-    if lab["mode"].iloc[0] == "current":       # 91% call: use TUL thirds within cells
-        return stratified_dm(X, lab, "tul")
+    if lab["mode"].iloc[0] != "sparse_tool":   # rev. Nov 14: in `current` 91% call -> no contrast in cells
+        return np.full(X.shape[1], np.nan), {"cells": 0, "tasks": 0, "skipped": "not built outside sparse_tool"}
     return stratified_dm(X, lab, "act", binary=True)
 
 
@@ -222,16 +219,12 @@ BINARY = {"need": True, "act": True, "diff": True}
 CONTINUOUS = ("SE", "fail_rate", "call_rate", "SE_res_fail", "SE_res_diff", "SE_abstain")
 
 
-def run_mode(cfg, mode, tul_window_current=1, surface=True):
+def run_mode(cfg, mode, surface=True):
     labels = pd.read_parquet(cfg.path("e1", "labels", "parquet"))
-    tul = {}
-    if mode == "current":
-        for split in ("train", "test"):
-            tul[split] = pd.read_parquet(cfg.path("e2", f"tul_{split}_{mode}", "parquet"))
     Xtr, ltr = load_split(cfg, "train", mode, labels)
     Xte, lte = load_split(cfg, "test", mode, labels)
-    ltr = add_derived_labels(ltr, mode, tul.get("train"), tul_window_current)
-    lte = add_derived_labels(lte, mode, tul.get("test"), tul_window_current)
+    ltr = add_derived_labels(ltr, mode)
+    lte = add_derived_labels(lte, mode)
     ltr["mode"] = lte["mode"] = mode
     for name, on in (("SE_res_fail", "fail_rate"), ("SE_res_diff", "tier")):
         ltr[name], lte[name] = residualise(ltr, lte, "SE", on)
@@ -262,9 +255,8 @@ def run_mode(cfg, mode, tul_window_current=1, surface=True):
             _, (r, mu, sd) = ridge_dir(Xl, ltr[y], P["ridge_alpha"])
             s = pd.Series(r.predict((Xt - mu) / sd), index=lte.index)
             rows += _rows(mode, l, y, "ridge", scoped_metrics(lte, y, s, False))
-        for name in ("SE^dm", "act^dm"):
+        for name, y in (("SE^dm", "SE"), ("act^dm", "act")):
             s = pd.Series(Xt @ dirs[name][l], index=lte.index)
-            y = "SE" if name == "SE^dm" else ("tul" if mode == "current" else "act")
             rows += _rows(mode, l, y, f"{name}_projection", scoped_metrics(lte, y, s, y == "act"))
         # norm channel (Stolfo et al.): does ||h|| alone predict SE / need?
         s = pd.Series(np.linalg.norm(Xt, axis=1), index=lte.index)
@@ -287,8 +279,7 @@ def run_mode(cfg, mode, tul_window_current=1, surface=True):
         rows += _rows(mode, -1, y, "surface_features", scoped_metrics(lte, y, pd.Series(s, index=lte.index), binary))
 
     meta = {"mode": mode, "n_train": len(ltr), "n_test": len(lte), "layers": L,
-            "stratified_info": {k: v[0] for k, v in info.items()},  # same cells at every layer
-            "tul_window_current": tul_window_current}
+            "stratified_info": {k: v[0] for k, v in info.items()}}  # same cells at every layer
     torch.save({**{k: torch.from_numpy(v) for k, v in dirs.items()}, "meta": meta},
                cfg.path("e3", f"directions_{mode}", "pt"))
     dec = pd.DataFrame(rows)
@@ -305,13 +296,11 @@ def _rows(mode, layer, label, method, m):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--modes", default=None)
-    ap.add_argument("--tul_window_current", type=int, default=1,
-                    help="TUL window used for d_act^dm in `current` (choose in E2)")
     a = ap.parse_args()
     cfg = load_config()
     m = cfg.get("modes", {"primary": "sparse_tool", "secondary": "current"})
     for mode in (a.modes.split(",") if a.modes else [m["primary"], m["secondary"]]):
-        _, dec, meta = run_mode(cfg, mode, a.tul_window_current)
+        _, dec, meta = run_mode(cfg, mode)
         best = (dec[(dec.label == "SE") & (dec.method == "ridge") & (dec.scope == "all")]
                 .sort_values("value", ascending=False).head(3))
         print(f"[{mode}] best SE layers: {best[['layer', 'value']].to_dict('records')}")

@@ -2,11 +2,11 @@
 
 Inputs:  results/e3/directions_<mode>.<hash>.pt, results/e3/decoding_<mode>.<hash>.parquet,
          results/e2/resid_train_<mode>.<hash>.pt (bootstrap / null refits, whitening),
-         results/e1/labels.<hash>.parquet, results/e2/tul_test_<mode>.<hash>.parquet (optional)
+         results/e1/labels.<hash>.parquet
 Outputs: results/e3/cosines_<mode>.<hash>.parquet   every layer: raw cosine for each pair;
                                                      best layers: + bootstrap CI, null 95%, whitened
          results/e3/behaviour_<mode>.<hash>.json     quadrant table, within-tier / within-cell
-                                                     Spearman of SE with call rate and TUL
+                                                     Spearman of SE with the call rate
 
 Usage:  python -m toolmech.geometry [--modes sparse_tool,current] [--n_boot 100] [--n_null 100]
 """
@@ -47,7 +47,7 @@ def refit_all(Xl, lab, cfg, names):
     return {n: GEOMETRY_SPECS[n](Xl, lab, cfg)[0] for n in names}
 
 
-def geometry_mode(cfg, mode, n_boot, n_null, seed=0, tul_window_current=1):
+def geometry_mode(cfg, mode, n_boot, n_null, seed=0):
     rng = np.random.default_rng(seed)
     D = torch.load(cfg.path("e3", f"directions_{mode}", "pt"), weights_only=False)
     names = list(GEOMETRY_SPECS)
@@ -63,12 +63,11 @@ def geometry_mode(cfg, mode, n_boot, n_null, seed=0, tul_window_current=1):
     layers = best_layers(dec)
     labels = pd.read_parquet(cfg.path("e1", "labels", "parquet"))
     Xtr, ltr = load_split(cfg, "train", mode, labels)
-    tul_tr = pd.read_parquet(cfg.path("e2", f"tul_train_{mode}", "parquet")) if mode == "current" else None
-    ltr = add_derived_labels(ltr, mode, tul_tr, tul_window_current)
+    ltr = add_derived_labels(ltr, mode)
     ltr["mode"] = mode
     ltr["SE_res_fail"], _ = residualise(ltr, ltr, "SE", "fail_rate")
     ltr["SE_res_diff"], _ = residualise(ltr, ltr, "SE", "tier")
-    label_cols = ["SE", "SE_res_fail", "SE_res_diff", "fail_rate", "need", "act", "diff", "tul"]
+    label_cols = ["SE", "SE_res_fail", "SE_res_diff", "fail_rate", "need", "act", "diff"]
 
     extra = []
     for l in layers:
@@ -100,25 +99,20 @@ def geometry_mode(cfg, mode, n_boot, n_null, seed=0, tul_window_current=1):
     return cosdf, layers
 
 
-def behaviour_tables(cfg, mode, tul_window=1):
-    """E3 details 2-3: within-tier/cell Spearman of SE with call rate (and TUL), quadrants."""
+def behaviour_tables(cfg, mode):
+    """E3 details 2-3: within-tier/cell Spearman of SE with the call rate, and the quadrants."""
     lab = pd.read_parquet(cfg.path("e1", "labels", "parquet"))
     t = lab[lab.split == "test"].copy()
     t["call"] = t[f"call_rate_{mode}"]
     t["abstain"] = t[f"abstain_rate_{mode}"]
-    try:
-        tul = pd.read_parquet(cfg.path("e2", f"tul_test_{mode}", "parquet"))
-        t = t.merge(tul[["id", f"tul_{tul_window}"]].rename(columns={f"tul_{tul_window}": "tul"}), on="id", how="left")
-    except FileNotFoundError:
-        t["tul"] = np.nan
 
     def rho(g, x, y):
         if g[x].std() == 0 or g[y].std() == 0 or g[[x, y]].isna().any(axis=None):
             return np.nan
         return float(spearmanr(g[x], g[y]).statistic)
 
-    out = {"mode": mode, "tul_window": tul_window}
-    for y in ("call", "tul"):
+    out = {"mode": mode}
+    for y in ("call",):
         out[f"rho_SE_{y}_all"] = rho(t, "SE", y)
         out[f"rho_SE_{y}_by_tier"] = {k: rho(g, "SE", y) for k, g in t.groupby("tier")}
         cells = [rho(g, "SE", y) for _, g in t.groupby(["env", "tier"])]
@@ -147,17 +141,14 @@ def main():
     ap.add_argument("--modes", default=None)
     ap.add_argument("--n_boot", type=int, default=None)
     ap.add_argument("--n_null", type=int, default=None)
-    ap.add_argument("--tul_window_current", type=int, default=1)
-    ap.add_argument("--tul_window_sparse_tool", type=int, default=8)
     a = ap.parse_args()
     cfg = load_config()
     m = cfg.get("modes", {"primary": "sparse_tool", "secondary": "current"})
     nb = a.n_boot or cfg["probes"]["n_bootstrap"]
     nn = a.n_null or cfg["probes"]["n_null"]
     for mode in (a.modes.split(",") if a.modes else [m["primary"], m["secondary"]]):
-        win = a.tul_window_current if mode == "current" else a.tul_window_sparse_tool
-        cosdf, layers = geometry_mode(cfg, mode, nb, nn, tul_window_current=a.tul_window_current)
-        beh = behaviour_tables(cfg, mode, win)
+        cosdf, layers = geometry_mode(cfg, mode, nb, nn)
+        beh = behaviour_tables(cfg, mode)
         top = cosdf[cosdf.layer == layers[0]].dropna(subset=["boot_lo"])
         print(f"[{mode}] best layers {layers}; key cosines at layer {layers[0]}:")
         for a_, b_ in (("SE^dm", "act^dm"), ("SE", "act"), ("SE", "need"), ("SE", "fail"), ("act^dm", "diff"),

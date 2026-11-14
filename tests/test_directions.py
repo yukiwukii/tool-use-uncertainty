@@ -113,34 +113,32 @@ def test_end_to_end_on_synthetic_files(tmp_path):
     assert len(beh["quadrants"]) == 4
 
 
-def test_end_to_end_current_mode_uses_tul(tmp_path):
+def test_end_to_end_current_mode_skips_act_dm(tmp_path):
     cfg = load_config()
     cfg["results_dir"] = str(tmp_path)
     L, d = 2, 32
-    u, w = _unit(rng.normal(size=d)), _unit(rng.normal(size=d))
-    rows, ids, states, tuls = [], {"train": [], "test": []}, {"train": [], "test": []}, {"train": [], "test": []}
+    u = _unit(rng.normal(size=d))
+    rows, ids, states = [], {"train": [], "test": []}, {"train": [], "test": []}
     k = 0
     for split, n in (("train", 9), ("test", 9)):
         for e in range(3):
             for tier in ("easy", "medium", "hard"):
                 for _ in range(n):
-                    se, tul = abs(rng.normal()), rng.normal() * 3 + 5
-                    h = np.stack([rng.normal(size=d) * 0.3 + se * u + 0.5 * tul * w for _ in range(L)])
+                    se, act = abs(rng.normal()), float(rng.random() < 0.9)
+                    h = np.stack([rng.normal(size=d) * 0.3 + se * u for _ in range(L)])
                     tid = f"c{k}"; k += 1
                     ids[split].append(tid); states[split].append(h)
-                    tuls[split].append({"id": tid, "tul_1": tul, "tul_8": tul})
                     rows.append({"id": tid, "split": split, "env": f"E{e}", "tier": tier, "need": float(se > 0.8),
-                                 "fail_rate": 0.1, "SE": se, "SE_abstain": se, "act_current": 1.0,
-                                 "call_rate_current": 1.0, "abstain_rate_current": 0.0})
+                                 "fail_rate": 0.1, "SE": se, "SE_abstain": se, "act_current": act,
+                                 "call_rate_current": act, "abstain_rate_current": 0.0})
     pd.DataFrame(rows).to_parquet(cfg.path("e1", "labels", "parquet"))
     for split in ids:
         torch.save({"ids": ids[split], "layers": list(range(L)),
                     "resid": torch.tensor(np.array(states[split]), dtype=torch.float32)},
                    cfg.path("e2", f"resid_{split}_current", "pt"))
-        pd.DataFrame(tuls[split]).to_parquet(cfg.path("e2", f"tul_{split}_current", "parquet"))
     dirs, dec, meta = D.run_mode(cfg, "current", surface=False)
-    assert dirs["act^dm"][1] @ w > 0.8                     # built from TUL thirds, not the constant act
-    assert meta["stratified_info"]["act^dm"]["cells"] == 9
+    assert np.isnan(dirs["act^dm"]).all()                   # not built in `current` (rev. Nov 14)
+    assert dirs["SE^dm"][1] @ u > 0.8
     cosdf, _ = G.geometry_mode(cfg, "current", n_boot=3, n_null=3)
     beh = G.behaviour_tables(cfg, "current")
-    assert beh["rho_SE_tul_all"] is not None
+    assert beh["rho_SE_call_all"] is not None and len(beh["quadrants"]) == 4
