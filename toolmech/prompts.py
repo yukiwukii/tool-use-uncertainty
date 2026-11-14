@@ -5,7 +5,7 @@ ListManipulation contract, the per-mode user message) and the model's chat
 template with `tools=`. Every step reads these cached strings, so vLLM sampling
 and HF hidden-state reads always see byte-identical prompts.
 
-Modes: 'current' (default), 'force_tool', 'no_tool' (also the hard_no_tool text).
+Modes: 'current', 'sparse_tool' (primary analysis mode), 'force_tool', 'no_tool' (also the hard_no_tool text).
 
 Usage:  python -m toolmech.prompts            # builds all splits x modes
 """
@@ -14,7 +14,7 @@ import os
 
 from toolmech.config import load_config, load_tasks, task_env
 
-MODES = ("current", "force_tool", "no_tool")
+MODES = ("current", "sparse_tool", "force_tool", "no_tool")
 SPLITS = ("train", "test", "multihop_train", "multihop_test")
 USER_TURN_MARKER = "<|im_start|>user"
 

@@ -16,7 +16,10 @@ import torch
 TOOL_CALL_TOKEN = "<tool_call>"
 
 
-def load_hf(cfg, device="cuda", dtype=torch.bfloat16):
+def load_hf(cfg, device="cuda", dtype=torch.float32):
+    """fp32 by default. In bf16, TUL for prompts near the decision boundary
+    moves by up to ~0.9 nats with batch composition and is biased by ~0.5 nats
+    vs fp32 (tests/test_hf_gpu.py); in fp32 batched == single to 1e-4."""
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(cfg["model_id"])
     tok.padding_side = "left"

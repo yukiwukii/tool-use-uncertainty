@@ -10,6 +10,11 @@ data:
   multihop_train: when2tool/data/tasks_v1_multihop_train.json
   multihop_test: when2tool/data/tasks_v1_multihop_test.json
 
+# Prompt modes (PLAN.md rev. Nov 14): primary analysis mode and comparison mode
+modes:
+  primary: sparse_tool
+  secondary: current
+
 # vLLM settings (shared GPU: keep memory fraction modest so HF jobs can co-exist)
 vllm:
   gpu_memory_utilization: 0.45
@@ -20,15 +25,17 @@ vllm:
 sampling:
   temperature: 1.0
   top_p: 1.0
+  top_k: -1            # full distribution; W2T otherwise inherits Qwen's top_k=20/top_p=0.8
   max_new_tokens: 1024
   k_notool: 10          # samples for fail_rate and SE
   n_call_samples: 20    # samples for call_rate
+  call_max_tokens: 512  # first-turn window for detecting a call (incl. late calls)
 
 # M1 / E2
 tul:
   min_spearman: 0.7
   max_late_call_share: 0.10
-  late_call_window: 8   # first-N-token window if TUL must be redefined
+  windows: [1, 8, 32, 64]   # windowed TUL along the greedy reply (PLAN.md M1, rev. Nov 14)
 
 # M3 / M4 / E3
 probes:

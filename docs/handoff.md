@@ -1,92 +1,102 @@
 # Handoff: implementing PLAN.md (toolmech)
 
-Status as of 2026-11-14 07:15 UTC. Read `PLAN.md` first; this file covers only what has been done, what is blocked, and the traps already found.
+Status as of 2026-11-14 10:35 UTC. Read `PLAN.md` first, especially its **revision log**: the prompt mode, the TUL definition, the steering direction and E4 changed after E0. This file covers the environment, what has run, what is running, the traps found, and what to do next.
 
 ## TL;DR
 
-- **No experiment has run yet.** E0–E5 are all pending, and `results/prompts/` is empty.
-- The local setup is done: When2Tool clone + data, model weights, venv, and the shared `toolmech` base (config, prompts, HF hooks).
-- **The blocker is the GPU.** The devbox has no GPU. Merlin job `c6cbba075b8ad484` is stuck in `queued`: it asks for 4×H100 / 92 CPU / 800 GB, and the group quota is 2×H100 / 80 CPU / 472 GB.
-- The previous agent did **not** stop or resize that job. The user has not yet approved stopping it or submitting a resized one. **Get explicit user approval before stopping or creating Merlin jobs.**
+- **Machine:** local box at `/tool-use-uncertainty` with one **NVIDIA A40 (48 GB)**, 96 CPUs, 503 GB RAM, 100 GB disk. No Merlin, devbox or HDFS any more; the user handles any leftover Merlin jobs from the previous handoff.
+- **E0 passed:** all-layer probe test AUROC **0.9495** (paper 0.948).
+- **E1 no-tool sampling is running** (train done; test in progress). The **E1 call sampling** has not started yet; see "Next steps" for the config edit that must come first.
+- **Agreed changes** (in PLAN.md's revision log): `sparse_tool` is the primary prompt mode with `current` as secondary; windowed TUL; steering uses a stratified difference in means (`d_SE^dm`); activation patching added to E4; fp32 for all HF passes.
+- Nothing is committed yet. Commit only when the user asks.
 
-## Environment (devbox)
+## Environment
 
-- Project root: `/mlx_devbox/users/nadya.wangsajaya/playground/epistemic-hackathon`. It is not a git repo.
-- Disk: only **about 6.7 GB free**. Don't cache large artefacts locally.
-- No `jq` or `bc`; use python. `python3 -m venv` is broken (no ensurepip), so use uv: `$(python3 -c "import site;print(site.USER_BASE)")/bin/uv`.
-- `.venv/` (Python 3.11) has vllm 0.8.5, transformers 4.55.2, torch 2.6.0+cu124, accelerate 1.13.0, datasets>=3, sklearn, scipy, pandas, pyarrow, pyyaml, matplotlib and pytest. The pinned list is `toolmech/requirements.txt`.
-  - `datasets` had to be upgraded to >=3 because older versions hit a pyarrow `PyExtensionType` error.
-- `.hf_cache/` (7.6 GB) holds `Qwen/Qwen3-4B-Instruct-2507`, snapshot `cdbee75f17c01a7cc42f958dc650907174af0554`. Set `HF_HOME=$PWD/.hf_cache`.
-- `when2tool/` is cloned from github.com/Trustworthy-ML-Lab/when2tool at commit `ef0cf1e`.
-  - The HF dataset `cesun/When2Tool` was dumped to `when2tool/data/tasks_v1_{train,test,multihop_train,multihop_test}.json`, with 900 / 2250 / 180 / 450 tasks.
+- Project root `/tool-use-uncertainty` (git repo, branch `main`). `when2tool/`, `.venv/`, `.hf_cache/` and `results/` are untracked (see `.gitignore`; add `results/` before committing).
+- `when2tool/`: github.com/Trustworthy-ML-Lab/when2tool at `ef0cf1e`. Data dumped with When2Tool's own HF loader to `when2tool/data/tasks_v1_{train,test,multihop_train,multihop_test}.json` (900 / 2250 / 180 / 450).
+- `.venv/`: Python 3.11 built with `uv` from `toolmech/requirements.txt` (torch 2.6.0+cu124, vllm 0.8.5, transformers 4.55.2). `setuptools` had to be added: vLLM's engine fails to start without it.
+- `.hf_cache/`: `Qwen/Qwen3-4B-Instruct-2507` at snapshot `cdbee75f…`. I wrote `refs/main` pointing at that snapshot by hand; without it, offline loads by model name fail.
+- **Environment variables for every command:**
+  ```bash
+  export PYTHONPATH=/tool-use-uncertainty HF_HOME=/tool-use-uncertainty/.hf_cache HF_HUB_OFFLINE=1 HF_HUB_ENABLE_HF_TRANSFER=0
+  ```
+  The machine sets `HF_HUB_ENABLE_HF_TRANSFER=1` globally without `hf_transfer` installed, which breaks downloads.
+- Use `.venv/bin/python`. Tests: `.venv/bin/python -m pytest tests -q -p no:cacheprovider` (the GPU tests skip without CUDA).
 
-## Code written so far (`toolmech/`)
+## What has run
+
+| Step | Result | Where |
+|---|---|---|
+| Prompt caches | 12 caches (4 splits × `current`/`force_tool`/`no_tool`), `user_start_char` ≥ 0 everywhere, max 2,323 tokens. `sparse_tool` caches build on first use. | `results/prompts/*.jsonl` |
+| `hf.py` GPU checks | 6/6 pass (`tests/test_hf_gpu.py`): hooks equal `hidden_states[l+1]`, last layer pre-norm, padding-invariant in fp32, steering identity at zero, user-turn index, TUL sign, windowed TUL consistency | — |
+| **E0** (reduced) | Step 2 extract features 22 min; step 3 probe 38 s: test AUROC **0.9495**, within-tier 0.92–0.94; step 1 eval `current`/`no_reasoning` × 3 runs only, 18 min: accuracy **0.888** | `when2tool/probe_data/qwen3-4b-instruct/`, `when2tool/outputs/qwen3-4b-instruct/current.json`, log `results/e0/e0.log`, script `results/e0/run_e0.sh` |
+| E1 smoke (`--limit 2`, 90 test tasks) | Passed: no missing labels, medium SE > 0 share 0.57; prompts byte-identical to cache (900/900); `need`~`fail_rate` r = 0.87; SE~fail_rate Spearman 0.65 | `results/e1_smoke/`, `results/e1_smoke.log` |
+| Prompt-mode comparison (same 90 tasks, 20 samples) | call rate / mixed-task share / late-call share: `current` 0.92 / 7% / ~1%; `necessary_tool` 0.81 / 11% / ~1%; `sparse_tool` 0.17 / 33% / ~58% | scratch only; rerun with `toolmech.labels` call stage |
+
+## What is running
+
+- **E1 no-tool stage:** `python -m toolmech.labels --splits train,test --stage notool`, PID 12743, log `results/e1_notool.log`. Train is done (`results/e1/notool_samples_train.f8759166.parquet`, about 31 min). Test (22,500 samples) was in its follow-up rounds at 10:34; expected to finish around 10:50 UTC.
+- Check it with: `grep -E "^round|Traceback" results/e1_notool.log | tail -3; ls results/e1/`.
+
+## Code state (`toolmech/`)
 
 | File | State |
 |---|---|
-| `configs/qwen3_4b.yaml` | Done. This is the single config. Its hash goes into artefact names: `results/<step>/<name>.<hash>.<ext>`. |
-| `toolmech/config.py` | Done. Provides `load_config` (env `TOOLMECH_CONFIG`), `Config.path/.hash/.data_path`, `seed_everything`, `load_tasks`, `task_env` and `TIER`. It puts `when2tool/src` and `when2tool` on sys.path. |
-| `toolmech/prompts.py` | Written, **never run successfully**. Its first run failed on the datasets/pyarrow error, which is now fixed. Next step: `python -m toolmech.prompts`, which only needs the tokenizer and runs on CPU. |
-| `toolmech/hf.py` | Written, untested on GPU. Provides residual capture via forward hooks on `model.model.layers[l]` (pre-final-norm), prefill-only steering from the user-turn position onward, `tul_from_logits`, `tool_token_ids` (`<tool_call>` is a single special token) and `last_logits_and_resid`. |
-| `toolmech/merlin/job_run.json`, `launch.sh`, `job_entry.sh` | These are the Merlin job spec, the submit script and the in-job entrypoint. The entrypoint builds a venv in `/opt/tm_venv`, downloads the model, touches `/opt/toolmech/READY`, then idles until `/opt/toolmech/STOP` exists. |
-| `toolmech/gpu.sh` | **Obsolete.** It uses an HDFS task queue, which is far too slow. Rewrite it as SSH + rsync. |
+| `config.py` | Done. Artefacts are `results/<step>/<name>.<cfg_hash>.<ext>`; the hash covers the **whole** config. |
+| `prompts.py` | Done and run. `MODES` now includes `sparse_tool`. |
+| `hf.py` | Done, GPU-tested. **`load_hf` defaults to fp32** (bf16 moved TUL by up to 0.9 nats near the decision boundary). |
+| `labels.py` | Done, smoke-tested. Stages `notool` / `calls` / `merge`; `--limit N` writes to `results/e1_smoke/`. Call sampling runs for both `cfg.modes` (default `sparse_tool`, `current`); columns are suffixed `_<mode>` and the primary mode also fills the plain names. SE clustering uses When2Tool's normalisers and keeps integers exact. |
+| `tul.py` | Done, tested (CPU and GPU), **not yet run on the full data**. Windowed TUL for N ∈ {1, 8, 32, 64} from one `generate(output_logits=True)` pass. |
+| `directions`, `geometry`, `steer`, `patch`, `conversations`, `corrupt`, `trajectory`, `plots`, `REPORT.md` | Not written. `patch.py` is new in the revised plan (M5b). |
+| `merlin/`, `gpu.sh` | Obsolete on this machine. |
 
-The remaining modules from PLAN.md are **not written**: `labels`, `tul`, `directions`, `geometry`, `steer`, `conversations`, `corrupt`, `trajectory`, `plots`. Neither is `REPORT.md`.
+Tests: `tests/test_labels.py` (4), `tests/test_tul.py` (3), `tests/test_hf_gpu.py` (6, GPU).
 
-## When2Tool facts that matter
+## Findings so far (for REPORT.md)
 
-- Qwen uses the **xml** tool format: `SYSTEM_PROMPT_XML`, tool calls inside `<tool_call>...</tool_call>`, and tool results returned as a user message wrapped in `<tool_response>`.
-- **Prompt mismatch:** `init_state` adds a ListManipulation contract system message, but `extract_features` does not.
-  - `toolmech/prompts.py` uses `init_state` for everything so that vLLM and HF prompts are byte-identical.
-  - Log this as a deviation and check that it doesn't break E0's 0.948 AUROC.
-- Labels in When2Tool use `hard_no_tool` mode: no_tool prompt text, and tool calls are rejected.
-- vLLM uses the model's generation_config defaults.
-- `run_eval` / `extract_features` default to `--tensor_parallel_size 4`; pass `1`.
-- `extract_features` uses `output_hidden_states`, whose last layer is post-norm.
-- `train_probe` uses reg=10000, i.e. C=1e-4.
+- **Over-calling:** in `current`, the model calls on 91% of test tasks; only 32 of 2,250 tasks vary across E0's 3 runs.
+- **"Knows but doesn't act":** call behaviour predicts `need` at AUROC **0.52**, against the probe's 0.95. Calls happen on 93% of tasks that need a tool and 89% of tasks that don't. Environment base rate alone predicts `need` at 0.77, so report within-environment probe AUROCs before claiming the probe reads more than task type.
+- **HistoricalYear is inverted:** it calls on 91% of tasks it could solve alone and 15% of tasks it would fail (AUROC 0.12). Check whether these hard tasks have low SE (the "hard but confident" H4 cell).
+- **SE is confounded:** with fail_rate (Spearman 0.65) and with environment (mean SE 0.11 to 1.75 in the smoke test). That is why `d_SE^dm` is built within environment × tier and matched on fail rate.
 
 ## Deviations to log in REPORT.md
 
-1. HF forward hooks are used instead of TransformerLens/nnsight. They give exact HF numerics.
-2. The prompt source is `init_state` (with the contract message) for both labels and features.
-3. Steering accuracy on all 2250 tasks is probably too expensive. Plan a subset (`manip_tasks_per_tier`) and log it.
+1. HF forward hooks instead of TransformerLens/nnsight (exact HF numerics).
+2. Prompt source is `init_state`, including the ListManipulation contract message, for both vLLM and HF. E0's probe AUROC still matches the paper.
+3. **fp32 for all HF passes.**
+4. **E0 step 1 reduced** to `current`/`no_reasoning`, 3 runs (the plan uses no other setting).
+5. **Sampling is T = 1, top_p = 1, top_k = −1, no repetition penalty.** When2Tool's vLLM wrapper otherwise inherits Qwen's `generation_config` (top_k = 20, top_p = 0.8).
+6. **`act` is a greedy (T = 0) first reply on the cached prompts**, per mode. E0's `run_eval` used Qwen's default sampling; its mean is kept as `act_w2t`.
+7. **Primary prompt mode `sparse_tool`, secondary `current`;** windowed TUL; stratified difference-in-means steering direction; activation patching added to E4 (all in PLAN.md's revision log).
+8. Steering accuracy on all 2,250 tasks is probably too expensive; use the per-tier subset first.
+9. `refs/main` in the HF cache was written by hand to pin the snapshot.
 
-## Compute: what works and what doesn't
+## Next steps
 
-- **mlx workers** (`mlx worker launch`): workspace quota is 0 for H100 and A10. A100 hung pending, and public-arnold A10 failed with a cross-cluster error. All workers were killed.
-- **bytedcli** needs `export BYTEDCLI_NETWORK_PROFILE=prod` and `--site i18n-tt`.
-  - Only the native REST `merlin job-v2 runs list/get/create` works.
-  - MCP-backed merlin commands fail because a proxy CA re-signs TLS.
-  - Trusting that CA (NODE_EXTRA_CA_CERTS) was denied by the user's permission policy. Do not work around it.
-  - `i18n-bd` returns 403.
-- **User's queue:** `compute-240-aliyun.va-cloudnative-aigcp-global.ecom.risk.management-guarantee`, usergroup `global_ecom_risk_management`, group_id 130, cluster_ids [4].
-  - Quota: **2× H100-SXM-80GB, 80 CPU, 483328 MB memory.**
-- **Job create** (`toolmech/merlin/launch.sh`, which supports `--dry-run`) reuses the `ImageEmbed` v2 template. It overrides `entrypoint_full_script`, `git_repo` and `image_meta`, and it needs empty `input_config`/`output_config`, `--attachments` (hdfs_volume) and `--compliance`.
-- **To fix the stuck job:**
-  - `job_run.json` is now set to **1×H100, 23 CPU, 204800 MB**. Per-GPU limit on this queue's nodes is ≤23 CPU / ≤204800 MB per GPU (scale linearly: 2 GPU → 46–47 CPU / 409600 MB). 24 CPU / 240000 MB failed with Arnold exit -80002 (job `ad83890c83a98936`). Relaunched as `f13abbdfc20a6542`. One GPU is enough: the 4B model is about 8 GB in bf16, and vLLM with TP=1 plus HF hooks fit side by side. 4 GPUs only came from copying the template. 2 GPUs (within quota) would roughly halve wall time by running vLLM sampling and HF steering concurrently.
-  - Stop `c6cbba075b8ad484`. Find the command under `bytedcli --site i18n-tt merlin job-v2 runs --help`.
-  - Relaunch.
-  - **Ask the user first** for each of these.
-- **H20 spot fallback:** group 130's H100 queue was 40/40 used. The shared spot pool `compute-288-my2-gpuspot1-default-mlsys.public.inc-guarantee` (cluster 21) had free H20/L20 GPUs. Spec: `toolmech/merlin/job_run_h20spot.json` (1×NVIDIA_H20, 23 CPU, 245760 MB, preemptible). Launch it with `JOB_SPEC=job_run_h20spot.json ./launch.sh`. Submitted as `626c9c78f9e613fc` alongside H100 `f13abbdfc20a6542`; keep whichever starts first and stop the other. Spot jobs can be preempted, so copy results out often.
-- **HDFS** (`/mnt/hdfs/nadya.wangsajaya`) runs at about 0.4 MB/s and about 7 s per small file from the devbox. Don't move data through it.
-  - Plan: get SSH with `bytedcli --site i18n-tt merlin job ssh-command get --job <id>`, then rsync code in and results out.
-  - The model can be downloaded inside the job (job_entry.sh tries this) or pushed over SSH.
-- Status check: `BYTEDCLI_NETWORK_PROFILE=prod bytedcli --json --site i18n-tt merlin job-v2 runs get --sid c6cbba075b8ad484` (shows `trial_status`).
-- **Gotchas:**
-  - Don't use `pkill -f <pattern>` when the pattern appears in your own command line; it kills your shell.
-  - A compression hook may truncate tool output; recover it with `caveman_retrieve` and the ccr handle.
+1. **Wait for the E1 no-tool stage to finish** (`results/e1/notool_samples_test.f8759166.parquet`).
+2. **Config edit, then rename.** Add to `configs/qwen3_4b.yaml`:
+   ```yaml
+   modes:
+     primary: sparse_tool
+     secondary: current
+   ```
+   and under `tul:` replace `late_call_window: 8` with `windows: [1, 8, 32, 64]`; set `sampling.call_max_tokens: 512`. This changes the config hash. The no-tool stage does not read any of these keys, so **rename** `results/e1/notool_samples_{train,test}.f8759166.parquet` to the new hash instead of resampling (about an hour). Print the new hash with `python -c "from toolmech.config import load_config; print(load_config().hash)"` and log the rename as a deviation. Don't edit the config while a stage is running: the running process writes under the hash it started with.
+3. **E1 call stage + merge:** `python -m toolmech.labels --splits train,test --stage calls`, then `--stage merge`. The two modes × 3,150 tasks × 21 samples should take about 30–40 min. Check that the late-call share in `sparse_tool` is near the smoke test's ~58%, and that call rates match the mode comparison.
+4. **Look at HistoricalYear-hard** in `labels.parquet`: SE, fail_rate and call rate.
+5. **E2:** `python -m toolmech.tul` (both modes, train + test). Choose the window per mode (smallest N with Spearman ρ ≥ 0.7 against `call_rate`). Report AUROC for `need` of TUL, calls and the probe side by side.
+6. **Write the remaining modules.** `directions.py` (including `d_SE^dm` and `d_act^dm` per PLAN.md M3; `d_act^dm` needs E2's TUL for the `current` mode), `geometry.py`, `steer.py`, `patch.py` (M5b) and `plots.py` can start in parallel; the E3 analysis is CPU-only once states and labels exist. E3 needs per-layer **pre-norm** residuals for `sparse_tool` and `current` prompts: When2Tool's `extract_features` saved `current` states from `output_hidden_states` (its last layer is post-norm), so re-extract with `hf.capture` in fp32.
+7. Before E3, write the one-page check of E0–E2 against the pass criteria (PLAN.md working rules).
 
-## Suggested next steps
+## User instructions and preferences
 
-1. Run `python -m toolmech.prompts` on CPU. Verify the prompt counts and token lengths, and check that `user_start_char` is ≥ 0 everywhere.
-2. Get the user's decision on compute:
-   - (a) resize and relaunch at 2×H100, or
-   - (b) code only, with CPU unit tests.
-3. Write the remaining modules in parallel. The E3 analysis, `plots` and `REPORT.md` are CPU-only and can proceed without a GPU against small synthetic fixtures.
-4. With a GPU, run E0 (When2Tool steps 1–3 with TP=1; target probe AUROC 0.948 ± 0.02), then E1 (labels.parquet), E2 (tul.parquet; Spearman ≥ 0.7), E4 and E5.
+- Implement PLAN.md; parallel agents are welcome. Ask when uncertain.
+- The user likes plain-language explanations: say what a number means and why it matters, not only the number.
+- Get explicit approval before plan-level changes; the changes above were approved on 2026-11-14.
 
-## User instructions so far
+## Gotchas
 
-- Implement PLAN.md and use many parallel agents. Ask when uncertain.
-- Use mlx/bytedcli or a separate Merlin job, on the user's own uncrowded queue.
-- The user's last messages before this handoff were "okay nevermind it is taking quite a long time" and then "i am going to handoff to a different agent". There has been no approval to stop or relaunch jobs.
+- `pgrep -f <pattern>` / `pkill -f <pattern>` match your own shell when the pattern is in your command line. Use `ps -eo pid,etimes,args | grep … | grep -v grep`.
+- vLLM prints "Triton module has been replaced with a placeholder" at start-up; it is harmless (triton 3.2.0 is installed).
+- When2Tool's `hard_no_tool` uses the **`no_tool`** prompt text and rejects calls; the comment in `extract_features.py` saying "current" is out of date.
+- In `no_reasoning` mode, When2Tool rejects a tool call that comes after text ("reasoning is not allowed"), so late calls count differently in the harness than in our sampled call rate.
+- `answer_key` must keep big integers exact (hash and matrix answers overflow `float`).

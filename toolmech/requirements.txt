@@ -9,3 +9,4 @@ pyarrow
 pyyaml
 matplotlib
 pytest
+setuptools

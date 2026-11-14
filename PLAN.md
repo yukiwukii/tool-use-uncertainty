@@ -1,6 +1,17 @@
 # Tool-Use Decisions in LLMs: Directions, Uncertainty and Circuits — Implementation Plan
 
-Nov 14, 2026
+Nov 14, 2026 · revised Nov 14, 2026 after E0 (see revision log)
+
+## Revision log
+
+Changes agreed with the user after E0 and the E1 smoke test; each is marked "(rev. Nov 14)" where it applies.
+
+1. **Prompt mode.** In `current` mode Qwen3-4B calls a tool on 91% of test tasks, and its call decisions predict `need` at AUROC 0.52 (the probe: 0.95). `sparse_tool` is now the **primary** mode (calls on ~17% of tasks, ~33% of tasks mixed across samples); `current` is the **secondary** mode. Comparing the two treats the instruction as a decision threshold (Kumaran et al. 2026).
+2. **TUL is windowed.** About 58% of `sparse_tool` calls begin after some text, so first-token TUL misses them. TUL_N is the probability of a `<tool_call>` within the first N tokens of the greedy reply (M1).
+3. **Steering direction.** The direction steered in E4 is a **stratified difference in means** of SE within environment × tier cells, matched on fail rate (`d_SE^dm`, M3), not the ridge probe. The ridge probe stays the decoding readout (E3, E5).
+4. **Activation patching** between matched high- and low-SE tasks is a second causal test in E4 (M5b).
+5. **Numerics.** All HF passes run in fp32: in bf16, TUL near the decision boundary moved by up to 0.9 nats with batch composition.
+6. **Tool-use direction.** `d_act` is also built as a stratified difference in means within environment × tier cells (`d_act^dm`, M3), so that it is compared with `d_SE^dm` on equal terms. In `current`, where 91% of tasks call, the label is TUL thirds instead of the binary `act`.
 
 ## Summary
 
@@ -8,7 +19,7 @@ The question: is a tool-trained LLM's decision to call a tool driven by its own 
 
 | Quantity                  | What it captures                                                                     | How it is measured                                                               |
 | ------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| **Uncertainty** (`d_SE`)  | How much the model's answers would vary in meaning                                   | Ridge probe on semantic entropy (SE) from sampled answers                        |
+| **Uncertainty** (`d_SE`)  | How much the model's answers would vary in meaning                                   | Ridge probe on semantic entropy (SE) for decoding; stratified difference in means (`d_SE^dm`) for steering (rev. Nov 14) |
 | **Difficulty** (`d_diff`) | How hard the task looks from its surface (the benchmark's easy / medium / hard tier) | Probe; label = easy (0) vs hard (1), medium held out, as in When2Tool Appendix J |
 | **Need** (`d_need`)       | Whether the task actually requires a tool                                            | When2Tool probe; label = model fails without tools                               |
 | **Act** (`d_act`)         | Whether the model will call a tool                                                   | Probe; label = model actually called a tool                                      |
@@ -18,14 +29,14 @@ The implementing agent should produce:
 
 1. A label table for every When2Tool task (need, SE, fail rate, act, call rate).
 2. Per-layer directions `d_SE`, `d_need`, `d_act` plus the difficulty direction `d_diff`, with their pairwise geometry.
-3. Steering curves along ±`d_SE`, with a check that steering really changes uncertainty, plus `d_need`, `d_act` and random directions for comparison.
+3. Steering curves along ±`d_SE^dm`, with a check that steering really changes uncertainty, plus `d_need`, `d_act`, `d_diff` and random directions for comparison, read against the measured change in SE; and activation patching between matched high- and low-SE tasks (rev. Nov 14).
 4. Uncertainty trajectories across multi-turn conversations: before the call, at the call and after each tool result, single-hop and multi-hop, with correct and corrupted tool outputs.
 5. A results write-up. Circuit analysis (EAP-IG, attribution graphs) is out of scope for now; see the appendix "Later: circuit analysis" at the end of this file.
 
 **Hypotheses**
 
 - **H1 (geometry):** `d_SE` is closely aligned with `d_need`, partly by construction, but much less with `d_act`.
-- **H2 (causation):** steering along +`d_SE` raises TUL and call rate; −`d_SE` cuts unnecessary calls while hard-task accuracy holds.
+- **H2 (causation):** steering along +`d_SE^dm` raises TUL and call rate; −`d_SE^dm` cuts unnecessary calls while hard-task accuracy holds. Per unit of SE change, `d_SE^dm` moves calls more than control directions do, and patching the decision-point state from a high-SE task into a matched low-SE task raises TUL (rev. Nov 14).
 - **H3 (dynamics):** uncertainty drops after a correct tool result. If it drops just as much after a corrupted result, the model's post-tool confidence is not calibrated to the evidence.
 - **H4 (difficulty vs uncertainty):** within a difficulty tier, semantic entropy still predicts tool calls. If instead `d_act` aligns with `d_diff` and not with `d_SE`, tool calls follow how hard a prompt looks, not the model's own uncertainty.
 
@@ -53,9 +64,11 @@ Use **Qwen/Qwen3-4B-Instruct-2507** and fork the **When2Tool** repo as the agent
 | [nnsight](https://nnsight.net) | Fallback backend if TransformerLens cannot load the model | Hooks on HF modules | State-reading and steering hooks |
 | [semantic_uncertainty](https://github.com/jlko/semantic_uncertainty) (Farquhar/Kossen) | Reference for semantic-entropy computation and SEP training | `compute_uncertainty_measures.py` logic | Replace NLI clustering with exact-match or numeric-equality clustering for short answers |
 
-Why this model: it has no thinking mode, so the tool decision happens at the first assistant token and TUL can be read directly. It is also small enough for steering sweeps and multi-turn sampling on one 80 GB GPU, and the When2Tool paper reports a probe AUROC of 0.948 for it.
+Why this model: it has no thinking mode, so the tool decision is made early in the first assistant turn and TUL can be read directly (at the first token in `current` mode; over a short window in `sparse_tool`, see M1). It is also small enough for steering sweeps and multi-turn sampling on one 80 GB GPU, and the When2Tool paper reports a probe AUROC of 0.948 for it.
 
 One harness, two passes: run all generation (baseline evaluation, no-tool sampling for labels and semantic entropy) through **vLLM** for speed. Run everything that needs hidden states or hooks (features, TUL, steering, multi-turn state reads) through **HF or TransformerLens** with the exact same chat template and prompt strings.
+
+**Prompt modes (rev. Nov 14).** When2Tool appends one policy sentence to every task; the modes differ only in that sentence. `current`: "You can choose to use a tool or not." `sparse_tool`: "Tool calls are expensive in this mode; default to zero tool calls…". `force_tool` and `no_tool` require or forbid tools. M1, M2 (`act`, `call_rate`), M3 (`d_act`), M5 and E2–E4 are run in **`sparse_tool` (primary) and `current` (secondary)**. Treat the mode as a decision threshold: fit call ~ SE + mode (+ SE × mode) to tell a shift of the threshold from a change in how strongly calls depend on uncertainty (Kumaran et al. 2026, Phase 4). E5 uses `force_tool` and the default mode as before.
 
 Multi-turn conversations come from the When2Tool harness itself: it executes real tools and returns their output as a tool message, and `run_multihop_pipeline.sh` runs 3-step tool-call chains. The agent needs one addition here: a hook that can **replace a tool's output** before it goes back to the model (for the corrupted-output condition in E5), and a way to **save hidden states at chosen positions** in each turn.
 
@@ -80,6 +93,14 @@ TUL = lp_tool - torch.log1p(-lp_tool.exp())
 
 Validation: sample 20 generations per task at T = 1 and compute the empirical call rate. Spearman ρ between TUL and call rate must be at least 0.7. Also report the share of calls that begin after some text (e.g. "Let me check…"); if it is above 10%, TUL misses those calls and must be redefined over the first few positions.
 
+**Windowed TUL (rev. Nov 14).** The late-call share is ~1% in `current` but ~58% in `sparse_tool`, so TUL is redefined along the greedy reply:
+
+```latex
+\mathrm{TUL}_N(x) = \operatorname{logit}\Big(1 - \prod_{t < N'} \big(1 - p_t(t_{\mathrm{tool}} \mid x, y_{<t})\big)\Big)
+```
+
+where y is the greedy continuation and N' = min(N, the step at which the greedy path calls a tool or ends). N = 1 is the first-token TUL above. Compute N ∈ {1, 8, 32, 64} from one `generate(output_logits=True)` pass (`toolmech/tul.py`) and use the smallest N whose Spearman ρ with the sampled call rate passes 0.7 in each mode. Calls on non-greedy paths are still missed; the sampled call rate stays the behavioural ground truth.
+
 ### M2. Labels
 
 | Label | Definition | Source |
@@ -87,8 +108,8 @@ Validation: sample 20 generations per task at T = 1 and compute the empirical ca
 | `need` (binary) | 1 if the model fails the task when tools are disabled | When2Tool `extract_features.py` |
 | `fail_rate` (continuous) | Share of k = 10 no-tool samples at T = 1 that are wrong | New: vLLM sampling |
 | `SE` (continuous) | Semantic entropy over the same k samples | New: cluster answers by normalised exact match (numbers parsed and compared numerically), then the entropy of cluster frequencies |
-| `act` (binary) | 1 if the default-prompt greedy run calls a tool | When2Tool `run_eval.py`, mode `current` |
-| `call_rate` (continuous) | Share of 20 sampled runs that call a tool | New |
+| `act` (binary) | 1 if the greedy (T = 0) first reply calls a tool, per mode: `sparse_tool` (primary) and `current` (rev. Nov 14) | New: vLLM on the cached prompts; E0's `run_eval.py` majority kept as `act_w2t` |
+| `call_rate` (continuous) | Share of 20 sampled first replies (T = 1, top_p = 1, top_k = −1) that call a tool, per mode | New |
 | `tier` | easy / medium / hard | Dataset field |
 
 Use the k no-tool samples for both `fail_rate` and `SE`, so the labels come from one sampling pass.
@@ -108,7 +129,24 @@ Report AUROC (or Spearman ρ for continuous labels) on the When2Tool test split 
 Two cautions for the comparison the project rests on:
 
 - `d_need` is labelled by failure, so it is partly an "I will get this wrong" direction. Some alignment with `d_SE` is expected by construction. Also fit `d_fail` (ridge on `fail_rate`) and report the `d_SE`–`d_need` cosine next to the `d_SE`–`d_fail` cosine. Then fit `d_SE|fail` (SE with fail_rate regressed out) to isolate uncertainty that is not just predicted error.
-- `d_act` is the actual tool-use direction. Its relation to `d_SE` is the main geometric result, because it says whether the urge to call tracks uncertainty.
+- `d_act` is the actual tool-use direction. Its relation to `d_SE` is the main geometric result, because it says whether the urge to call tracks uncertainty. Compare the stratified versions `d_act^dm` and `d_SE^dm` as the headline (rev. Nov 14); the plain versions mix in task type.
+
+**Steering direction for uncertainty (`d_SE^dm`, rev. Nov 14).** A plain high-vs-low-SE mean difference would mostly encode task type: in the E1 smoke test, mean SE ranged from 0.11 (CodeExecutor) to 1.75 (Decoding), and SE correlated with fail_rate at Spearman 0.65. Build the direction within matched cells instead:
+
+1. Group tasks by environment × tier (train split).
+2. Within each cell, keep tasks whose majority no-tool answer is correct, or match fail_rate within ±0.1, so uncertainty is separated from predicted error (as Kumaran et al. use correct trials only).
+3. Within each cell, take the mean residual of the top-third SE tasks minus the mean of the bottom-third.
+4. Average the per-cell differences, weighting by cell size, and normalise. Skip cells with fewer than 3 tasks in either group.
+
+Report how many cells and tasks contribute, and the cosine of `d_SE^dm` with plain `d_SE`, `d_diff` and the environment-mean directions. Fit `d_SE^dm` per layer, like every other direction.
+
+**Tool-use direction (`d_act^dm`, rev. Nov 14).** The plain difference in means `d_act` has the same task-type problem, and it is worse in `current`: the 9% of tasks that never call come almost entirely from Retriever, HistoricalYear and GameRule, so plain `d_act` would mostly encode "this is a knowledge-recall question". Build it within environment × tier cells, per prompt mode:
+
+- **`sparse_tool`:** within each cell, mean residual of tasks with `act` = 1 minus tasks with `act` = 0 (greedy decision). Skip cells with fewer than 3 tasks on either side.
+- **`current`:** most cells have no tasks with `act` = 0, so use the top third minus the bottom third of windowed TUL within each cell. TUL still varies when nearly every task calls.
+- Average the per-cell differences weighted by cell size, then normalise, as for `d_SE^dm`.
+
+Report the contributing cells and tasks per mode and the cosine of `d_act^dm` with plain `d_act`. `d_act^dm` is used in three places: the geometry comparison with `d_SE^dm` (H1, H4), as the **positive control** in E4 steering (pushing along it must move calls, otherwise the steering setup itself is broken), and as the comparison 1-D patch in M5b. Because the `current` version is built from TUL, it is partly defined by the readout it is later used to move; read its steering effect as a check that the setup works, not as a finding.
 
 **Difficulty direction (`d_diff`).** Fit it per layer on the benchmark tier: easy = 0, hard = 1, medium held out (the difficulty-only probe in When2Tool Appendix J). Tier is set by the benchmark designers from surface properties (operand size, entity obscurity, procedure length) and is the same for every model. Uncertainty is specific to one model and varies a lot within a tier: Qwen3-4B-Instruct gets 74% of easy and 20% of hard tasks right without tools. Also fit `d_SE|diff`, the SE direction after regressing tier out of the SE labels, to isolate uncertainty that difficulty does not explain.
 
@@ -123,11 +161,24 @@ Also report the cosine after whitening (multiply by C^(−1/2), where C is the a
 
 ### M5. Steering
 
-Add α · d to the residual stream at layer l, at every prompt position from the start of the user turn onward, with α = k · std(H_l · d) for k from −4 to 4 in steps of 1. Steer along ±`d_SE` first, then `d_need`, `d_act` and a random direction of equal norm for comparison.
+Add α · d to the residual stream at layer l, at every prompt position from the start of the user turn onward, with α = k · std(H_l · d) for k from −4 to 4 in steps of 1. Steer along ±`d_SE^dm` first (rev. Nov 14), then plain `d_SE`, `d_need`, `d_act`, `d_diff` and a random direction of equal norm for comparison.
 
-Record three readouts per k: TUL, the greedy call decision, and the call rate over 20 samples. Report them per difficulty tier, together with task accuracy.
+Record three readouts per k: windowed TUL, the greedy call decision, and the call rate over 20 samples, in both prompt modes. Report them per difficulty tier, together with task accuracy.
 
-**Manipulation check (required):** under the same steering, sample k = 10 no-tool answers and recompute SE. Along +`d_SE`, SE must rise with k, and along −`d_SE` it must fall. If SE does not move, a flat tool-use curve means nothing, because the steering did not change uncertainty.
+**Manipulation check (required):** under the same steering, sample k = 10 no-tool answers and recompute SE. Along +`d_SE^dm`, SE must rise with k, and along −`d_SE^dm` it must fall. If SE does not move, a flat tool-use curve means nothing, because the steering did not change uncertainty.
+
+**Read effects against the change in SE (rev. Nov 14).** A large push off the usual activations can raise SE and tool calls just by disrupting the model, so the manipulation check alone does not show that uncertainty was changed specifically. For every direction, plot ΔTUL and Δcall-rate against the **measured** ΔSE, not against k, and compare slopes: the uncertainty account predicts that `d_SE^dm` moves calls more than the controls at the same ΔSE. Also report the share of steered no-tool answers that are unparseable (no `\boxed{}`) at each k, and drop strengths where it exceeds 10%.
+
+### M5b. Activation patching between matched tasks (rev. Nov 14)
+
+Every prompt in a mode ends with the same response-policy suffix and assistant header (~30–40 tokens). At those positions the tokens are identical across tasks and differ only in what they have read from the task, so states can be swapped between tasks without aligning lengths.
+
+1. **Pairs.** Pair a high-SE task with a low-SE task from the same environment and tier, with matched fail rate where possible (top vs bottom SE third, as in `d_SE^dm`). Aim for at least 300 pairs. Optionally add constructed minimal pairs from When2Tool's generators (same template and digit count; for Retriever and HistoricalYear, well-known vs obscure entities, as in Ferrando et al. 2025).
+2. **Metric.** Windowed TUL (continuous and linear in the logits, as Zhang & Nanda 2024 and Heimersheim & Nanda 2024 recommend). Normalised effect = (TUL_patched − TUL_recipient) / (TUL_donor − TUL_recipient). Patch both ways (high → low and low → high).
+3. **Layer sweep.** At each layer, patch the residual at all suffix positions at once; then split by position at the best layers.
+4. **Does the patch carry uncertainty?** At the best layer, patch and sample k = 10 no-tool answers; the recipient's SE should move toward the donor's.
+5. **Is `d_SE^dm` the channel?** Patch only the component along `d_SE^dm` and compare it with the full-residual patch and a random 1-D patch. Makelov et al. (2023) show that 1-D subspace patches can act through pathways the model does not normally use, so keep both controls.
+6. **Optional: DAS.** Learn the subspace that best transfers TUL under interchange (Boundless DAS, Wu et al. 2023) and compare it with `d_SE^dm`, `d_diff` and `d_act`.
 
 ### M6. Uncertainty across a multi-turn conversation
 
@@ -154,21 +205,21 @@ E0 Reproduce ──► E1 Labels ──► E3 Directions ──probe──► E5
                  E2 TUL ──readout──► E4 Steering
 ```
 
-E1 labels feed every later step. The E3 uncertainty probe is used twice: as the direction steered in E4, and as the readout tracked through conversations in E5.
+E1 labels feed every later step. The E3 uncertainty probe is the readout tracked through conversations in E5; the direction steered in E4 is the stratified difference in means `d_SE^dm`, also built in E3 (rev. Nov 14).
 
 | Step | Goal | Inputs | Outputs | Pass criterion |
 | --- | --- | --- | --- | --- |
 | **E0. Reproduce** | Confirm the harness works | When2Tool repo, `./run_pipeline.sh qwen3-4b-instruct --steps 1,2,3` | Baseline accuracy and calls; all-layer probe | Probe AUROC within 0.02 of the paper's 0.948 |
 | **E1. Labels** | Build the full label table | E0 tasks; vLLM sampling | `labels.parquet` with need, fail_rate, SE, act, call_rate, tier per task | No missing labels; SE is non-zero for at least 30% of medium tasks |
-| **E2. TUL** | Measure the urge to call | HF model, M1 | `tul.parquet`; plot of TUL against call_rate | Spearman ρ ≥ 0.7 |
-| **E3. Directions and geometry** | Is uncertainty the same direction as difficulty, need, or action? | Per-layer states, E1 labels | Per-layer decoding curves; cosine heatmap of `d_SE`, `d_SE\|fail`, `d_fail`, `d_need`, `d_act`, `d_diff`, `d_SE\|diff` with CIs and the null; difficulty × uncertainty quadrant table | SE probe Spearman ρ ≥ 0.5 on test (target); bootstrap CI width under 0.1 |
-| **E4. Steer uncertainty** | Does uncertainty cause tool calls? | `d_SE` and comparison directions at the best 3 layers | Curves of SE (manipulation check), TUL, call rate and accuracy against k, per tier | Manipulation check passes; random control moves TUL by less than 0.5 nats |
+| **E2. TUL** | Measure the urge to call | HF model, M1 | `tul.parquet` per mode with TUL_N for N ∈ {1, 8, 32, 64}; plot of TUL against call_rate; AUROC of TUL and of calls for `need` next to the probe's (the When2Tool gap) | Spearman ρ ≥ 0.7 for the chosen window in each mode (rev. Nov 14) |
+| **E3. Directions and geometry** | Is uncertainty the same direction as difficulty, need, or action? | Per-layer states, E1 labels | Per-layer decoding curves; cosine heatmap of `d_SE`, `d_SE\|fail`, `d_fail`, `d_need`, `d_act`, `d_diff`, `d_SE\|diff`, plus `d_SE^dm` and `d_act^dm` per mode (rev. Nov 14), with CIs and the null; difficulty × uncertainty quadrant table | SE probe Spearman ρ ≥ 0.5 on test (target); bootstrap CI width under 0.1 |
+| **E4. Causal tests of uncertainty** | Does uncertainty cause tool calls? | `d_SE^dm` and comparison directions at the best 3 layers; matched high/low-SE pairs (rev. Nov 14) | Steering: SE (manipulation check), TUL, call rate and accuracy against k and against measured ΔSE, per tier and mode. Patching: per-layer normalised TUL effect, SE transfer, 1-D vs full patch | Manipulation check passes; random control moves TUL by less than 0.5 nats; patching effect reported with bootstrap CIs over pairs |
 | **E5. Uncertainty before and after tool use** | Does the tool call resolve uncertainty, and is that justified? | Multi-turn conversations from the harness, single-hop and multi-hop; correct and corrupted tool outputs | Uncertainty at P1, P2, P3 (and per hop) by condition; probe readout vs sampled `SE_post` | P3-specific probe Spearman ρ ≥ 0.5 against `SE_post` |
 
 ### E3 details: difficulty versus uncertainty
 
 1. **Geometry.** Report the cosines of `d_act` with `d_diff` and with `d_SE|diff`. If `d_act` is close to `d_diff` and far from `d_SE|diff`, the urge to call tracks surface difficulty, not uncertainty.
-2. **Within-tier prediction.** Inside each tier, report Spearman ρ between SE and call rate, and between SE and TUL. A clear correlation inside a tier means uncertainty adds information beyond difficulty.
+2. **Within-tier prediction.** Inside each tier, report Spearman ρ between SE and call rate, and between SE and TUL. A clear correlation inside a tier means uncertainty adds information beyond difficulty. Repeat inside each environment × tier cell (rev. Nov 14): environment alone predicts `need` at AUROC 0.77, so a tier-level correlation can still be driven by task type.
 3. **Off-diagonal cases.** Split tasks into four quadrants by tier (easy or hard) and SE (below or above the median within that tier). Report the call rate in each.
 
 |  | Low SE | High SE |
@@ -178,13 +229,21 @@ E1 labels feed every later step. The E3 uncertainty probe is used twice: as the 
 
 The two off-diagonal cells decide the question. If easy/high-SE tasks get few calls and hard/low-SE tasks get many, the model calls on appearance. If the pattern is reversed, it calls on uncertainty.
 
-### E4 details: steering uncertainty
+### E4 details: causal tests of uncertainty (rev. Nov 14)
+
+**Steering (M5)**
 
 1. Pick the 3 layers where the `d_SE` probe decodes best on the test split.
-2. Run the M5 sweep along +`d_SE` and −`d_SE` on all 2,250 test tasks, using the default prompt mode (`current`).
-3. Run the manipulation check first, on 300 tasks (100 per tier). Stop and report if SE does not move with k.
-4. Repeat the sweep with `d_need`, `d_act`, `d_diff` and a random direction, so the size of the `d_SE` effect can be read against them. Also repeat the ±`d_SE` sweep on medium tasks only, where difficulty is held fixed.
-5. Headline numbers: change in call rate on easy tasks and change in accuracy on hard tasks at k = −2 and k = +2.
+2. Run the manipulation check first, on 300 tasks (100 per tier), along ±`d_SE^dm`. Stop and report if SE does not move with k.
+3. Run the M5 sweep along +`d_SE^dm` and −`d_SE^dm` in `sparse_tool` (primary) and `current`. Start with a stratified subset (`manip_tasks_per_tier` per tier) and extend to all 2,250 test tasks if time allows; log the subset as a deviation.
+4. Repeat the sweep with plain `d_SE`, `d_need`, `d_act`, `d_diff` and a random direction. Compare them by Δcall-rate per unit of measured ΔSE, not per unit of k.
+5. Headline numbers: change in call rate on easy tasks and change in accuracy on hard tasks at k = −2 and k = +2, and the ΔTUL/ΔSE slope of `d_SE^dm` against the controls.
+
+**Patching (M5b)**
+
+6. Build at least 300 matched pairs from the test split (same environment and tier, high vs low SE, fail rate matched). Run the layer sweep in both directions in `sparse_tool`, then repeat at the best layers in `current`.
+7. At the best layer, run the SE-transfer check and the 1-D `d_SE^dm` patch against the full and random patches.
+8. Interpretation. Steering and patching agree → strong evidence that uncertainty drives calls. Patching moves TUL but the 1-D `d_SE^dm` patch does not → the decision reads uncertainty-related state that `d_SE^dm` does not capture. Neither moves calls beyond the controls → calls do not follow the model's uncertainty.
 
 ### E5 details: uncertainty across multi-turn tool use
 
@@ -241,6 +300,7 @@ toolmech/
   directions.py            # M3: diff-in-means, logistic, ridge per layer; d_SE|fail, d_diff, d_SE|diff
   geometry.py              # M4 / E3: cosines, bootstrap, null, whitening
   steer.py                 # M5 / E4: sweeps, manipulation check
+  patch.py                 # M5b / E4: matched pairs, suffix-position patching, 1-D vs full patches (rev. Nov 14)
   conversations.py         # E5: multi-turn runs, tool-output hook, position finder (P1, P2, P3)
   corrupt.py               # E5: per-environment corrupted tool outputs
   trajectory.py            # E5: probe readouts and SE_post per position and hop
@@ -254,8 +314,9 @@ REPORT.md                  # final write-up
 
 1. Per-layer decoding curves (AUROC or ρ) for SE, fail_rate, need, act, call_rate and difficulty; plus call rate in the four difficulty × uncertainty quadrants.
 2. Cosine heatmap of `d_SE`, `d_SE|fail`, `d_fail`, `d_need` and `d_act`, plus `d_diff` and `d_SE|diff`, at the best layer, with the null band.
-3. Manipulation check: SE of sampled answers against steering strength k along ±`d_SE`.
-4. Steering curves: TUL and call rate against k for `d_SE`, `d_need`, `d_act` and random, split by tier, with hard-task accuracy.
+3. Manipulation check: SE of sampled answers against steering strength k along ±`d_SE^dm`.
+4. Steering curves: TUL and call rate against k and against measured ΔSE for `d_SE^dm`, `d_SE`, `d_need`, `d_act`, `d_diff` and random, split by tier and prompt mode, with hard-task accuracy.
+4b. Patching: normalised TUL effect by layer (both directions), SE transfer, and the 1-D `d_SE^dm` patch against the full and random patches (rev. Nov 14).
 5. Uncertainty at P1 → P2 → P3, split by need and by correct or corrupted tool output.
 6. Multi-hop trajectories: SE per hop, and the rate of another call when SE stays high.
 
@@ -266,7 +327,8 @@ REPORT.md                  # final write-up
 | E0 baseline and features | A few GPU-hours with vLLM |
 | E1 sampling (3,150 tasks × 30 samples) | 2–4 GPU-hours with vLLM |
 | E2–E3 forward passes and probes | Under 2 GPU-hours |
-| E4 steering sweeps (9 strengths × 5 directions, plus sampling for the manipulation check) | 4–8 GPU-hours |
+| E4 steering sweeps (9 strengths × 6 directions × 2 modes, plus sampling for the manipulation check) | 8–16 GPU-hours (rev. Nov 14: doubled for two modes; use the per-tier subset first) |
+| E4 patching (≈300 pairs × 36 layers × 2 directions, plus SE sampling at the best layer) | 2–4 GPU-hours |
 | E5 conversations (single-hop and multi-hop, 2 conditions, SE sampling at each P3) | 6–12 GPU-hours |
 
 These are estimates, not measurements; the agent should time E0 first and rescale.
@@ -285,6 +347,12 @@ These are estimates, not measurements; the agent should time E0 first and rescal
 - Stolfo et al., [Confidence Regulation Neurons in Language Models](https://arxiv.org/abs/2406.16254), NeurIPS 2024.
 - Park, Choe and Veitch, [The Linear Representation Hypothesis and the Geometry of Large Language Models](https://arxiv.org/abs/2311.03658), ICML 2024.
 - Marks and Tegmark, *The Geometry of Truth*, 2023 (difference-in-means directions for steering).
+- Kumaran, Daw, Osindero, Veličković and Patraucean, [Causal Evidence that Language Models use Confidence to Drive Behavior](https://arxiv.org/abs/2603.22161), Nature Machine Intelligence 2026 (difference-in-means confidence steering on correct trials; confidence vs threshold decomposition).
+- Zhang and Nanda, [Towards Best Practices of Activation Patching in Language Models](https://arxiv.org/abs/2309.16042), ICLR 2024.
+- Heimersheim and Nanda, [How to use and interpret activation patching](https://arxiv.org/abs/2404.15255), 2024.
+- Makelov, Lange and Nanda, [Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching](https://arxiv.org/abs/2311.17030), 2023.
+- Wu, Geiger, Icard, Potts and Goodman, [Interpretability at Scale: Identifying Causal Mechanisms in Alpaca](https://arxiv.org/abs/2305.08809) (Boundless DAS), 2023.
+- Ferrando, Obeso, Rajamanoharan and Nanda, [Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models](https://arxiv.org/abs/2411.14257), ICLR 2025.
 - [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens) (v3, `TransformerBridge`; Qwen3 adapter available).
 
 ---
