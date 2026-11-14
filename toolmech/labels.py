@@ -2,6 +2,8 @@
 
 Per task:  need, tier, env                      <- When2Tool E0 (hard_no_tool, one sample)
            fail_rate, SE, n_clusters             <- k no-tool samples (hard_no_tool loop, T=1)
+           SE_abstain, abstain_rate_notool       <- same samples; "I don't know" answers as one cluster
+           abstain_rate_<mode>                   <- share of call samples that answer "unknown" without calling
            act (greedy), call_rate, late_share   <- n call samples per mode (cfg.modes: primary
                                                     sparse_tool, secondary current); suffixed _<mode>
            act_w2t                               <- mean tool use over E0's 3 run_eval runs (if present)
@@ -81,9 +83,32 @@ def answer_key(ans):
     return ("t", t)
 
 
-def semantic_entropy(answers):
-    """Discrete SE (nats) = entropy of cluster frequencies; returns (SE, n_clusters)."""
-    counts = Counter(answer_key(a) for a in answers)
+_ABSTAIN = re.compile(
+    r"unknown|not known|unclear|undetermin|cannot be determined|can't be determined|cannot determine|"
+    r"no record|no information|insufficient|not available|^\\?(text\{)?n/a\}?$|^none$|fictional|does not exist|"
+    r"doesn't exist|not exist|^\?+$|i don't know|i do not know", re.I)
+_YEAR_ENVS = {"HistoricalYearEnv"}  # year 0 is a placeholder, not an answer
+
+
+def is_abstain(ans, env=None):
+    """True if a boxed answer declines to answer ("unknown", "N/A", ...). For year
+    questions, "0" is also treated as a placeholder; elsewhere 0 can be a real answer."""
+    if ans is None:
+        return False
+    t = str(ans).strip()
+    if not t:
+        return False
+    if _ABSTAIN.search(t):
+        return True
+    return env in _YEAR_ENVS and t in ("0", "0000")
+
+
+def semantic_entropy(answers, env=None, abstain_cluster=False):
+    """Discrete SE (nats) = entropy of cluster frequencies; returns (SE, n_clusters).
+    abstain_cluster=True puts every "I don't know" answer into one shared cluster
+    (SE_abstain); by default each abstention is clustered like any other answer."""
+    key = (lambda a: ("<abstain>",) if is_abstain(a, env) else answer_key(a)) if abstain_cluster else answer_key
+    counts = Counter(key(a) for a in answers)
     n = sum(counts.values())
     if n == 0:
         return float("nan"), 0
@@ -202,15 +227,18 @@ def sample_calls(cfg, model, split, step="e1", limit=0, mode="current"):
     samp = model.llm.generate(prompts, model.sampling(n=n, max_tokens=mt, seed=cfg["seed"],
                                                       **_sampling_cfg(cfg)))
     greedy = model.llm.generate(prompts, model.sampling(n=1, max_tokens=mt, temperature=0.0))
+    from utils import extract_boxed  # When2Tool
     rows = []
     for r, s, g in zip(recs, samp, greedy):
         for j, o in enumerate(s.outputs):
             c, late = call_position(o.text)
             rows.append({"id": r["id"], "sample": j, "called": c, "late": late, "greedy": False,
-                         "call_char": o.text.find(TOOL_TAG), "text": o.text[:200]})
+                         "call_char": o.text.find(TOOL_TAG), "boxed": extract_boxed(o.text),
+                         "text": o.text[:200]})
         c, late = call_position(g.outputs[0].text)
         rows.append({"id": r["id"], "sample": -1, "called": c, "late": late, "greedy": True,
-                     "call_char": g.outputs[0].text.find(TOOL_TAG), "text": g.outputs[0].text[:200]})
+                     "call_char": g.outputs[0].text.find(TOOL_TAG), "boxed": extract_boxed(g.outputs[0].text),
+                     "text": g.outputs[0].text[:200]})
     df = pd.DataFrame(rows)
     df.to_parquet(path)
     return df
@@ -248,19 +276,31 @@ def merge(cfg, splits, step="e1"):
         cs_by_mode = {m: pd.read_parquet(cfg.path(step, f"call_samples_{split}_{m}", "parquet"))
                       for m in call_modes(cfg)}
         for tid, g in nt.groupby(nt["id"].astype(str)):
-            se, ncl = semantic_entropy(g["answer"].tolist())
             t = tasks[tid]
+            env = task_env(t)
+            se, ncl = semantic_entropy(g["answer"].tolist())
+            se_ab, _ = semantic_entropy(g["answer"].tolist(), env, abstain_cluster=True)
             row = {
                 "id": tid, "split": split, "env": task_env(t), "tier": t.get("difficulty"),
                 "need": need.get(tid, np.nan),
                 "fail_rate": 1.0 - g["correct"].mean(), "SE": se, "n_clusters": ncl,
+                "SE_abstain": se_ab,
+                "abstain_rate_notool": float(np.mean([is_abstain(a, env) for a in g["answer"]])),
                 "act_w2t": act_w2t.get(tid, np.nan),  # E0, `current` mode, Qwen default sampling
             }
             for i, (m, cs) in enumerate(cs_by_mode.items()):
                 c = cs[cs["id"].astype(str) == tid]
                 samp, gr = c[~c["greedy"]], c[c["greedy"]]
+                if "boxed" in samp:
+                    ans, exact = samp["boxed"], True
+                else:  # older runs kept only the first 200 chars: a lower bound
+                    from utils import extract_boxed
+                    ans, exact = samp["text"].map(extract_boxed), False
+                ab = [(not c) and is_abstain(a, env) for c, a in zip(samp["called"], ans)]
                 vals = {
                     "act": int(gr["called"].iloc[0]) if len(gr) else np.nan,
+                    "abstain_rate": float(np.mean(ab)) if len(ab) else np.nan,
+                    "abstain_rate_exact": exact,
                     "call_rate": samp["called"].mean(),
                     "call_rate_first": (samp["called"] & ~samp["late"]).mean(),
                     "late_share": samp["late"].sum() / max(1, samp["called"].sum()),

@@ -13,6 +13,9 @@ recovers first-token TUL. All windows come from one `generate` pass with
 `output_logits=True`, so hooks (steering, patching) see exactly the forwards that
 produced the path: steered prefill, unsteered decode (see hf.steer).
 
+Also saves, from the same pass, the pre-norm residual at the last prompt token for
+every layer (E3 input), unless --no_resid.
+
 Usage:  python -m toolmech.tul [--modes sparse_tool,current] [--splits train,test]
 """
 import argparse
@@ -67,33 +70,55 @@ def windowed_tul(step_logits, gen_ids, tool_ids, eos_ids, windows=DEFAULT_WINDOW
 
 
 @torch.no_grad()
-def tul_batch(model, tok, texts, windows=DEFAULT_WINDOWS, device="cuda"):
-    """Greedy-generate max(windows) tokens and return windowed TULs for a batch."""
+def tul_batch(model, tok, texts, windows=DEFAULT_WINDOWS, device="cuda", capture_layers=None):
+    """Greedy-generate max(windows) tokens and return windowed TULs for a batch.
+
+    capture_layers: if given (e.g. range(n_layers)), also return the pre-norm residual
+    at the last prompt token for those layers, [B, L, d] float32 on cpu, read from
+    the prefill forward of the same `generate` call (no extra pass)."""
     ids, mask, _ = hf.encode(tok, texts, device)
     n_max = max(windows)
-    g = model.generate(input_ids=ids, attention_mask=mask, max_new_tokens=n_max, do_sample=False,
-                       return_dict_in_generate=True, output_logits=True,
-                       pad_token_id=tok.pad_token_id, temperature=None, top_p=None, top_k=None)
+    gather = torch.full((ids.shape[0], 1), ids.shape[1] - 1, device=device)
+    ctx = hf.capture(model, gather, capture_layers) if capture_layers is not None else None
+    store = ctx.__enter__() if ctx else None
+    try:
+        g = model.generate(input_ids=ids, attention_mask=mask, max_new_tokens=n_max, do_sample=False,
+                           return_dict_in_generate=True, output_logits=True,
+                           pad_token_id=tok.pad_token_id, temperature=None, top_p=None, top_k=None)
+    finally:
+        if ctx:
+            ctx.__exit__(None, None, None)
     step_logits = torch.stack(g.logits, dim=1)                      # [B, T, V]
     gen = g.sequences[:, ids.shape[1]:]
     eos = [tok.convert_tokens_to_ids("<|im_end|>"), tok.eos_token_id]
-    return windowed_tul(step_logits, gen, hf.tool_token_ids(tok), eos, windows), gen
+    res = windowed_tul(step_logits, gen, hf.tool_token_ids(tok), eos, windows)
+    if store is not None:
+        res["resid"] = torch.stack([store[l][:, 0] for l in sorted(store)], dim=1)
+    return res, gen
 
 
-def run(cfg, modes, splits, batch_size=8):
+def run(cfg, modes, splits, batch_size=8, save_resid=True):
+    """TUL per task (parquet) and, if save_resid, last-prompt-token pre-norm residuals
+    for every layer (results/e2/resid_<split>_<mode>.<hash>.pt: ids, layers, resid [n, L, d])."""
     tok, model = hf.load_hf(cfg)
     windows = tuple(cfg.get("tul", {}).get("windows", DEFAULT_WINDOWS))
+    layers = list(range(hf.n_layers(model))) if save_resid else None
     for mode in modes:
         for split in splits:
             path = cfg.path("e2", f"tul_{split}_{mode}", "parquet")
-            if os.path.exists(path):
+            rpath = cfg.path("e2", f"resid_{split}_{mode}", "pt")
+            if os.path.exists(path) and (not save_resid or os.path.exists(rpath)):
                 continue
             recs = load_prompts(cfg, split, mode)
             order = np.argsort([r["n_tokens"] for r in recs])          # length-sorted batches
-            rows = []
+            rows, resid_ids, resid_chunks = [], [], []
             for b in range(0, len(order), batch_size):
                 chunk = [recs[i] for i in order[b:b + batch_size]]
-                res, gen = tul_batch(model, tok, [r["prompt_text"] for r in chunk], windows)
+                res, gen = tul_batch(model, tok, [r["prompt_text"] for r in chunk], windows,
+                                     capture_layers=layers)
+                if save_resid:
+                    resid_ids += [str(r["id"]) for r in chunk]
+                    resid_chunks.append(res["resid"])
                 for j, r in enumerate(chunk):
                     row = {"id": str(r["id"]), "split": split, "mode": mode,
                            "call_pos": int(res["call_pos"][j]), "path_len": int(res["path_len"][j]),
@@ -101,6 +126,10 @@ def run(cfg, modes, splits, batch_size=8):
                     row.update({f"tul_{n}": float(res[n][j]) for n in windows})
                     rows.append(row)
             pd.DataFrame(rows).to_parquet(path)
+            if save_resid:
+                torch.save({"ids": resid_ids, "layers": layers, "position": "last_prompt_token",
+                            "pre_norm": True, "dtype": "float32",
+                            "resid": torch.cat(resid_chunks)}, rpath)
             print(path, len(rows))
 
 
@@ -109,11 +138,12 @@ def main():
     ap.add_argument("--modes", default=None, help="default: cfg.modes.primary,secondary")
     ap.add_argument("--splits", default="train,test")
     ap.add_argument("--batch_size", type=int, default=8)
+    ap.add_argument("--no_resid", action="store_true", help="skip saving residuals for E3")
     a = ap.parse_args()
     cfg = load_config()
     m = cfg.get("modes", {"primary": "sparse_tool", "secondary": "current"})
     modes = a.modes.split(",") if a.modes else [m["primary"], m["secondary"]]
-    run(cfg, modes, a.splits.split(","), a.batch_size)
+    run(cfg, modes, a.splits.split(","), a.batch_size, save_resid=not a.no_resid)
 
 
 if __name__ == "__main__":

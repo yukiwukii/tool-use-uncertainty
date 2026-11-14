@@ -120,3 +120,18 @@ def test_windowed_tul_consistency(setup):
     assert (res[8] >= res[1] - 1e-4).all()                                   # windows only add mass
     single = torch.cat([tul_batch(model, tok, [t], windows=(8,))[0][8] for t in texts])
     torch.testing.assert_close(res[8].cpu(), single.cpu(), rtol=0, atol=1e-2)
+
+
+@torch.no_grad()
+def test_tul_pass_captures_same_resid(setup):
+    from toolmech.tul import tul_batch
+    cfg, tok, model, recs = setup
+    texts = [r["prompt_text"] for r in recs["current"][:3]]
+    L = hf.n_layers(model)
+    res, _ = tul_batch(model, tok, texts, windows=(1, 8), capture_layers=range(L))
+    _, ref = hf.last_logits_and_resid(model, tok, texts)
+    assert res["resid"].shape == ref.shape == (3, L, model.config.hidden_size)
+    # generate's prefill uses KV-cache kernels: fp32 rounding up to ~4e-4 in the last layer (values ~1e2)
+    torch.testing.assert_close(res["resid"], ref, rtol=1e-3, atol=1e-3)
+    # a wrong position (e.g. a decode step) would be far off: rows must not match each other
+    assert (res["resid"][0] - res["resid"][1]).abs().max() > 1.0
