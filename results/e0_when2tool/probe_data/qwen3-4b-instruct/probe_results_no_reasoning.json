@@ -1,0 +1,304 @@
+{
+  "mode": "no_reasoning",
+  "C": 0.0001,
+  "all_layers": true,
+  "n_layers": 37,
+  "hidden_dim": 2560,
+  "best_layer": "all",
+  "best_train_acc": 0.9256,
+  "best_test_auroc": 0.9495,
+  "best_test_acc": 0.8787,
+  "train_envs": null,
+  "per_difficulty": {
+    "easy": {
+      "n": 750,
+      "n_necessary": 229,
+      "accuracy": 0.908,
+      "auroc": 0.9424,
+      "confusion_matrix": [
+        [
+          489,
+          32
+        ],
+        [
+          37,
+          192
+        ]
+      ]
+    },
+    "medium": {
+      "n": 750,
+      "n_necessary": 344,
+      "accuracy": 0.8147,
+      "auroc": 0.9164,
+      "confusion_matrix": [
+        [
+          361,
+          45
+        ],
+        [
+          94,
+          250
+        ]
+      ]
+    },
+    "hard": {
+      "n": 750,
+      "n_necessary": 607,
+      "accuracy": 0.9133,
+      "auroc": 0.9286,
+      "confusion_matrix": [
+        [
+          102,
+          41
+        ],
+        [
+          24,
+          583
+        ]
+      ]
+    }
+  },
+  "per_env": {
+    "CalculatorEnv": {
+      "n": 150,
+      "n_necessary": 56,
+      "accuracy": 0.96,
+      "auroc": 0.9687,
+      "confusion_matrix": [
+        [
+          94,
+          0
+        ],
+        [
+          6,
+          50
+        ]
+      ]
+    },
+    "CodeExecutorEnv": {
+      "n": 150,
+      "n_necessary": 14,
+      "accuracy": 0.8933,
+      "auroc": 0.8141,
+      "confusion_matrix": [
+        [
+          132,
+          4
+        ],
+        [
+          12,
+          2
+        ]
+      ]
+    },
+    "CountingEnv": {
+      "n": 150,
+      "n_necessary": 58,
+      "accuracy": 0.8133,
+      "auroc": 0.9353,
+      "confusion_matrix": [
+        [
+          75,
+          17
+        ],
+        [
+          11,
+          47
+        ]
+      ]
+    },
+    "DateTimeEnv": {
+      "n": 150,
+      "n_necessary": 86,
+      "accuracy": 0.7733,
+      "auroc": 0.8695,
+      "confusion_matrix": [
+        [
+          53,
+          11
+        ],
+        [
+          23,
+          63
+        ]
+      ]
+    },
+    "DecodingEnv": {
+      "n": 150,
+      "n_necessary": 144,
+      "accuracy": 0.96,
+      "auroc": 0.9398,
+      "confusion_matrix": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          144
+        ]
+      ]
+    },
+    "GameRuleEnv": {
+      "n": 150,
+      "n_necessary": 89,
+      "accuracy": 0.8067,
+      "auroc": 0.9059,
+      "confusion_matrix": [
+        [
+          58,
+          3
+        ],
+        [
+          26,
+          63
+        ]
+      ]
+    },
+    "HashEnv": {
+      "n": 150,
+      "n_necessary": 149,
+      "accuracy": 0.9933,
+      "auroc": 0.9866,
+      "confusion_matrix": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          149
+        ]
+      ]
+    },
+    "HistoricalYearEnv": {
+      "n": 150,
+      "n_necessary": 59,
+      "accuracy": 0.94,
+      "auroc": 0.948,
+      "confusion_matrix": [
+        [
+          91,
+          0
+        ],
+        [
+          9,
+          50
+        ]
+      ]
+    },
+    "ListManipulationEnv": {
+      "n": 150,
+      "n_necessary": 28,
+      "accuracy": 0.8867,
+      "auroc": 0.9517,
+      "confusion_matrix": [
+        [
+          116,
+          6
+        ],
+        [
+          11,
+          17
+        ]
+      ]
+    },
+    "MatrixEnv": {
+      "n": 150,
+      "n_necessary": 105,
+      "accuracy": 0.92,
+      "auroc": 0.9826,
+      "confusion_matrix": [
+        [
+          35,
+          10
+        ],
+        [
+          2,
+          103
+        ]
+      ]
+    },
+    "PrimeEnv": {
+      "n": 150,
+      "n_necessary": 51,
+      "accuracy": 0.88,
+      "auroc": 0.9026,
+      "confusion_matrix": [
+        [
+          85,
+          14
+        ],
+        [
+          4,
+          47
+        ]
+      ]
+    },
+    "RegexMatchEnv": {
+      "n": 150,
+      "n_necessary": 78,
+      "accuracy": 0.6733,
+      "auroc": 0.7502,
+      "confusion_matrix": [
+        [
+          54,
+          18
+        ],
+        [
+          31,
+          47
+        ]
+      ]
+    },
+    "RetrieverEnv": {
+      "n": 150,
+      "n_necessary": 63,
+      "accuracy": 0.9067,
+      "auroc": 0.9318,
+      "confusion_matrix": [
+        [
+          86,
+          1
+        ],
+        [
+          13,
+          50
+        ]
+      ]
+    },
+    "ScheduleEnv": {
+      "n": 150,
+      "n_necessary": 105,
+      "accuracy": 0.82,
+      "auroc": 0.9185,
+      "confusion_matrix": [
+        [
+          18,
+          27
+        ],
+        [
+          0,
+          105
+        ]
+      ]
+    },
+    "StatisticsEnv": {
+      "n": 150,
+      "n_necessary": 95,
+      "accuracy": 0.9533,
+      "auroc": 0.9824,
+      "confusion_matrix": [
+        [
+          55,
+          0
+        ],
+        [
+          7,
+          88
+        ]
+      ]
+    }
+  }
+}

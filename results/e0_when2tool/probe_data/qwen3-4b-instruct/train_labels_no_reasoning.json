@@ -1,0 +1,8108 @@
+{
+  "reasoning_mode": "no_reasoning",
+  "split": "train",
+  "no_tool_correct": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1
+  ],
+  "task_meta": [
+    {
+      "id": 11001,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11002,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11003,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11004,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11005,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11006,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11007,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11008,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11009,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11010,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11011,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11012,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11013,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11014,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11015,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11016,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11017,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11018,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11019,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 11020,
+      "difficulty": "easy",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 12001,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12002,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12003,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12004,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12005,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12006,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12007,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12008,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12009,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12010,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12011,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12012,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12013,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12014,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12015,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12016,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12017,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12018,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12019,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 12020,
+      "difficulty": "medium",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 13001,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13002,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13003,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13004,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13005,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13006,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13007,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13008,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13009,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13010,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13011,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13012,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13013,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13014,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13015,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13016,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13017,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13018,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13019,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 13020,
+      "difficulty": "hard",
+      "env": "CalculatorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 21001,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 21002,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21003,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21004,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21005,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 21006,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21007,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21008,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21009,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21010,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21011,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21012,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21013,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21014,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21015,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21016,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21017,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21018,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21019,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 21020,
+      "difficulty": "easy",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 22001,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22002,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22003,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22004,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 22005,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22006,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22007,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22008,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 22009,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22010,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22011,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22012,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 22013,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22014,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22015,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22016,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 22017,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22018,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22019,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 22020,
+      "difficulty": "medium",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 23001,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23002,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23003,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23004,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23005,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23006,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23007,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23008,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23009,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23010,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23011,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23012,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23013,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23014,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23015,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23016,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23017,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23018,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23019,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 23020,
+      "difficulty": "hard",
+      "env": "StatisticsEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 31001,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31002,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31003,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31004,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 31005,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31006,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31007,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31008,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31009,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31010,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31011,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31012,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31013,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 31014,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31015,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31016,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31017,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31018,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31019,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 31020,
+      "difficulty": "easy",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32001,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32002,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32003,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 32004,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32005,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 32006,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32007,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32008,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32009,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32010,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32011,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 32012,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 32013,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32014,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 32015,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32016,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32017,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32018,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 32019,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 32020,
+      "difficulty": "medium",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 33001,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33002,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33003,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33004,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33005,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 33006,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33007,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33008,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33009,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33010,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33011,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 33012,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33013,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33014,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33015,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 33016,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33017,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 33018,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 33019,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 33020,
+      "difficulty": "hard",
+      "env": "CountingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41001,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41002,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41003,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41004,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41005,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41006,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41007,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41008,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41009,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41010,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41011,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41012,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41013,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41014,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41015,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41016,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41017,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 41018,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41019,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 41020,
+      "difficulty": "easy",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 42001,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42002,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 42003,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42004,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42005,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 42006,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42007,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42008,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 42009,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42010,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42011,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 42012,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42013,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42014,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 42015,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42016,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42017,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 42018,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42019,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 42020,
+      "difficulty": "medium",
+      "env": "MatrixEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 43001,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43002,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43003,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43004,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43005,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43006,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43007,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43008,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43009,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43010,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43011,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43012,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43013,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43014,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43015,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43016,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43017,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43018,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43019,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 43020,
+      "difficulty": "hard",
+      "env": "MatrixEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 51001,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 51002,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51003,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51004,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51005,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51006,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 51007,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51008,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51009,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51010,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51011,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51012,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51013,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 51014,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51015,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51016,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51017,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 51018,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 51019,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 51020,
+      "difficulty": "easy",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52001,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52002,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52003,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52004,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52005,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52006,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52007,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52008,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52009,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52010,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52011,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52012,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52013,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52014,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52015,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52016,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52017,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52018,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 52019,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 52020,
+      "difficulty": "medium",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53001,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53002,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53003,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53004,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53005,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53006,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53007,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53008,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53009,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53010,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53011,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53012,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53013,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53014,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53015,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53016,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53017,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53018,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 53019,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 53020,
+      "difficulty": "hard",
+      "env": "PrimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61001,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61002,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61003,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61004,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61005,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61006,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61007,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61008,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 61009,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61010,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61011,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61012,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61013,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61014,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61015,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61016,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 61017,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61018,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61019,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 61020,
+      "difficulty": "easy",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62001,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62002,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62003,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 62004,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62005,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62006,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62007,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62008,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62009,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62010,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62011,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62012,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62013,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62014,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62015,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62016,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62017,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62018,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62019,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 62020,
+      "difficulty": "medium",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 63001,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63002,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63003,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63004,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63005,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63006,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63007,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63008,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63009,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63010,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63011,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63012,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63013,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63014,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63015,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63016,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63017,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63018,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63019,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 63020,
+      "difficulty": "hard",
+      "env": "RetrieverEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 71001,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71002,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71003,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71004,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71005,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71006,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71007,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71008,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71009,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71010,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71011,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71012,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71013,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71014,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71015,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71016,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71017,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71018,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71019,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 71020,
+      "difficulty": "easy",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72001,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72002,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72003,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72004,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72005,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72006,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72007,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 72008,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72009,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72010,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72011,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72012,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72013,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72014,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72015,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72016,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72017,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72018,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72019,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 72020,
+      "difficulty": "medium",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 73001,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73002,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73003,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73004,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73005,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73006,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73007,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73008,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73009,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73010,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73011,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73012,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73013,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73014,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73015,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73016,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73017,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73018,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73019,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 73020,
+      "difficulty": "hard",
+      "env": "HistoricalYearEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 81001,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81002,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81003,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 81004,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81005,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81006,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81007,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 81008,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81009,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81010,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81011,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81012,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81013,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81014,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81015,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81016,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81017,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81018,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81019,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 81020,
+      "difficulty": "easy",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82001,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82002,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82003,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 82004,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82005,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82006,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82007,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 82008,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82009,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82010,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 82011,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82012,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82013,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 82014,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 82015,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82016,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82017,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82018,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 82019,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 82020,
+      "difficulty": "medium",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83001,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83002,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83003,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83004,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83005,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83006,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83007,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83008,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83009,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83010,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83011,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83012,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83013,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83014,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83015,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83016,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83017,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83018,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83019,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 83020,
+      "difficulty": "hard",
+      "env": "GameRuleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91001,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91002,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91003,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91004,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91005,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91006,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91007,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91008,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91009,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 91010,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91011,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91012,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91013,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91014,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91015,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 91016,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91017,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91018,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 91019,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 91020,
+      "difficulty": "easy",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92001,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92002,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92003,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92004,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92005,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92006,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92007,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92008,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92009,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92010,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92011,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92012,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92013,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92014,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92015,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92016,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92017,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92018,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92019,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 92020,
+      "difficulty": "medium",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93001,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93002,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93003,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93004,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93005,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93006,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93007,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93008,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93009,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93010,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93011,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93012,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93013,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93014,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93015,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93016,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93017,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93018,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93019,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 93020,
+      "difficulty": "hard",
+      "env": "HashEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101001,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101002,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101003,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101004,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101005,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101006,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101007,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101008,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101009,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101010,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101011,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101012,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101013,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101014,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101015,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101016,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101017,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101018,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101019,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 101020,
+      "difficulty": "easy",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102001,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102002,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102003,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102004,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102005,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 102006,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102007,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102008,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102009,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102010,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102011,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102012,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102013,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102014,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102015,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102016,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102017,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 102018,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102019,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 102020,
+      "difficulty": "medium",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103001,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103002,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103003,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103004,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103005,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103006,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103007,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103008,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103009,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103010,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103011,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103012,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103013,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103014,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103015,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103016,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103017,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103018,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103019,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 103020,
+      "difficulty": "hard",
+      "env": "DecodingEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 111001,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111002,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111003,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111004,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111005,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111006,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111007,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111008,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111009,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111010,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111011,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111012,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111013,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111014,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111015,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111016,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111017,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111018,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111019,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 111020,
+      "difficulty": "easy",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112001,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112002,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112003,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112004,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112005,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112006,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112007,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112008,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112009,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112010,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112011,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112012,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112013,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112014,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112015,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112016,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112017,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112018,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112019,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 112020,
+      "difficulty": "medium",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113001,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113002,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113003,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113004,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113005,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113006,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113007,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113008,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113009,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113010,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113011,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113012,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113013,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113014,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113015,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113016,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113017,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 113018,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113019,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 113020,
+      "difficulty": "hard",
+      "env": "ListManipulationEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 121001,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121002,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121003,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 121004,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121005,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121006,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 121007,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121008,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121009,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 121010,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121011,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121012,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 121013,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121014,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121015,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 121016,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121017,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121018,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 121019,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 121020,
+      "difficulty": "easy",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122001,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122002,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 122003,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122004,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122005,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122006,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122007,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122008,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122009,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 122010,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122011,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122012,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122013,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122014,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122015,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122016,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 122017,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 122018,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 122019,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 122020,
+      "difficulty": "medium",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 123001,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123002,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123003,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123004,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123005,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123006,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123007,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123008,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123009,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123010,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123011,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123012,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123013,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123014,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123015,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123016,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123017,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123018,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123019,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 123020,
+      "difficulty": "hard",
+      "env": "DateTimeEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 131001,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131002,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131003,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131004,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 131005,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131006,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131007,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131008,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131009,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131010,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 131011,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131012,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 131013,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131014,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131015,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131016,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131017,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131018,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131019,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 131020,
+      "difficulty": "easy",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132001,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132002,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132003,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132004,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132005,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132006,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132007,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 132008,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132009,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132010,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132011,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132012,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132013,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132014,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 132015,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132016,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132017,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132018,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132019,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 132020,
+      "difficulty": "medium",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133001,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133002,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133003,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133004,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133005,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133006,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 133007,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133008,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133009,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 133010,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133011,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 133012,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133013,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133014,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133015,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 133016,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133017,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133018,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 133019,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 133020,
+      "difficulty": "hard",
+      "env": "CodeExecutorEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 141001,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141002,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141003,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 141004,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141005,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141006,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 141007,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141008,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141009,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 141010,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141011,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141012,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 141013,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141014,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141015,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 141016,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141017,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 141018,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 141019,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 141020,
+      "difficulty": "easy",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142001,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142002,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142003,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142004,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142005,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 142006,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142007,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142008,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142009,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142010,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142011,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 142012,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142013,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142014,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142015,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142016,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142017,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 142018,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142019,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 142020,
+      "difficulty": "medium",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 143001,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143002,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 143003,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143004,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143005,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 143006,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143007,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 143008,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 143009,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143010,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143011,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 143012,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143013,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143014,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 143015,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143016,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143017,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143018,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143019,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 143020,
+      "difficulty": "hard",
+      "env": "ScheduleEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151001,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151002,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151003,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151004,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151005,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151006,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151007,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151008,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151009,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151010,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151011,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151012,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151013,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151014,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151015,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151016,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151017,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151018,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 151019,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 151020,
+      "difficulty": "easy",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152001,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152002,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152003,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152004,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152005,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152006,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152007,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152008,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152009,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152010,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152011,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152012,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152013,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152014,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152015,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 152016,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152017,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152018,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152019,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 152020,
+      "difficulty": "medium",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153001,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153002,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 153003,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153004,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153005,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153006,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153007,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153008,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 153009,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153010,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 153011,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153012,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 153013,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 153014,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153015,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153016,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 153017,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 0,
+      "tool_necessary": 1,
+      "first_sentence": ""
+    },
+    {
+      "id": 153018,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153019,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    },
+    {
+      "id": 153020,
+      "difficulty": "hard",
+      "env": "RegexMatchEnv",
+      "no_tool_correct": 1,
+      "tool_necessary": 0,
+      "first_sentence": ""
+    }
+  ]
+}
