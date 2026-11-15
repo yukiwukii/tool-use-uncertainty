@@ -1,0 +1,8 @@
+/tool-use-uncertainty/results/e1/labels.9c3c9f8d.parquet
+tasks=3150  missing core labels=0  medium SE>0 share=0.536
+         need  fail_rate     SE    act  call_rate  late_share
+tier                                                         
+easy    0.305      0.310  0.386  0.041      0.026       0.064
+hard    0.807      0.822  0.990  0.374      0.369       0.511
+medium  0.445      0.444  0.629  0.111      0.114       0.171
+E1 PASS

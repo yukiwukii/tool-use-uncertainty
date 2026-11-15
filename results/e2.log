@@ -1,0 +1,6 @@
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.81s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.37s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.20s/it]
+/tool-use-uncertainty/results/e2/tul_train_sparse_tool.9c3c9f8d.parquet 900
+/tool-use-uncertainty/results/e2/tul_test_sparse_tool.9c3c9f8d.parquet 2250
+/tool-use-uncertainty/results/e2/tul_train_current.9c3c9f8d.parquet 900
+/tool-use-uncertainty/results/e2/tul_test_current.9c3c9f8d.parquet 2250
+exit=0 elapsed=5366s

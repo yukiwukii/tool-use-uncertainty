@@ -1,0 +1,55 @@
+[current] layer 1/36 done
+[current] layer 2/36 done
+[current] layer 3/36 done
+[current] layer 4/36 done
+[current] layer 5/36 done
+[current] layer 6/36 done
+[current] layer 7/36 done
+[current] layer 8/36 done
+[current] layer 9/36 done
+[current] layer 10/36 done
+[current] layer 11/36 done
+[current] layer 12/36 done
+[current] layer 13/36 done
+[current] layer 14/36 done
+[current] layer 15/36 done
+[current] layer 16/36 done
+[current] layer 17/36 done
+[current] layer 18/36 done
+[current] layer 19/36 done
+[current] layer 20/36 done
+[current] layer 21/36 done
+[current] layer 22/36 done
+[current] layer 23/36 done
+[current] layer 24/36 done
+[current] layer 25/36 done
+[current] layer 26/36 done
+[current] layer 27/36 done
+[current] layer 28/36 done
+[current] layer 29/36 done
+[current] layer 30/36 done
+[current] layer 31/36 done
+[current] layer 32/36 done
+[current] layer 33/36 done
+[current] layer 34/36 done
+[current] layer 35/36 done
+[current] layer 36/36 done
+[current] best SE layers: [{'layer': 21, 'value': 0.7999564157358435}, {'layer': 20, 'value': 0.7991124854910301}, {'layer': 19, 'value': 0.797968738995559}]
+[current] stratified cells: {'SE^dm': {'cells': 9, 'tasks': 125}, 'act^dm': {'cells': 0, 'tasks': 0, 'skipped': 'not built outside sparse_tool'}}
+/tool-use-uncertainty/.venv/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1409: RuntimeWarning: All-NaN slice encountered
+  return _nanquantile_unchecked(
+[current] geometry layer 21: 100 boots, 100 nulls
+/tool-use-uncertainty/.venv/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1409: RuntimeWarning: All-NaN slice encountered
+  return _nanquantile_unchecked(
+[current] geometry layer 20: 100 boots, 100 nulls
+/tool-use-uncertainty/.venv/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1409: RuntimeWarning: All-NaN slice encountered
+  return _nanquantile_unchecked(
+[current] geometry layer 19: 100 boots, 100 nulls
+[current] best layers [21, 20, 19]; key cosines at layer 21:
+  SE      vs act     cos +0.02 [+0.01, +0.03] null95 0.06 whitened -0.01
+  SE      vs need    cos +0.16 [+0.14, +0.18] null95 0.22 whitened +0.07
+  SE      vs fail    cos +0.55 [+0.48, +0.59] null95 0.70 whitened +0.54
+  SE|diff vs act     cos +0.02 [+0.01, +0.03] null95 0.06 whitened -0.01
+  SE|fail vs need    cos +0.02 [-0.00, +0.03] null95 0.03 whitened -0.06
+[current] quadrants: [{'tier': 'easy', 'SE_half': 'low_SE', 'n': 495, 'call_rate': 0.8067676767676768, 'abstain_rate': 0.0, 'fail_rate': 0.08080808080808081, 'need': 0.08080808080808081, 'mean_SE': 0.0}, {'tier': 'easy', 'SE_half': 'high_SE', 'n': 255, 'call_rate': 0.9590196078431373, 'abstain_rate': 0.0, 'fail_rate': 0.7596078431372548, 'need': 0.7411764705882353, 'mean_SE': 1.1728824979468586}, {'tier': 'hard', 'SE_half': 'low_SE', 'n': 393, 'call_rate': 0.9010178117048346, 'abstain_rate': 0.04541984732824428, 'fail_rate': 0.7358778625954199, 'need': 0.732824427480916, 'mean_SE': 0.28468064671133325}, {'tier': 'hard', 'SE_half': 'high_SE', 'n': 357, 'call_rate': 0.930532212885154, 'abstain_rate': 0.04159663865546218, 'fail_rate': 0.9319327731092437, 'need': 0.8935574229691877, 'mean_SE': 1.779405282235292}]
+exit=0 elapsed=858s

@@ -1,0 +1,57 @@
+{
+  "mode": "sparse_tool",
+  "rho_SE_call_all": 0.27455824510451804,
+  "rho_SE_call_by_tier": {
+    "easy": 0.1403562337196694,
+    "hard": 0.13617967571524003,
+    "medium": 0.2072515306648126
+  },
+  "rho_SE_call_within_cell": {
+    "median": 0.05547738315685645,
+    "share_positive": 0.6060606060606061,
+    "n_cells": 33
+  },
+  "rho_fail_call_all": 0.39274686151618093,
+  "quadrants": [
+    {
+      "tier": "easy",
+      "SE_half": "low_SE",
+      "n": 495,
+      "call_rate": 0.0197979797979798,
+      "abstain_rate": 0.0,
+      "fail_rate": 0.08080808080808081,
+      "need": 0.08080808080808081,
+      "mean_SE": 0.0
+    },
+    {
+      "tier": "easy",
+      "SE_half": "high_SE",
+      "n": 255,
+      "call_rate": 0.039411764705882354,
+      "abstain_rate": 0.0,
+      "fail_rate": 0.7596078431372548,
+      "need": 0.7411764705882353,
+      "mean_SE": 1.1728824979468586
+    },
+    {
+      "tier": "hard",
+      "SE_half": "low_SE",
+      "n": 393,
+      "call_rate": 0.3402035623409669,
+      "abstain_rate": 0.0450381679389313,
+      "fail_rate": 0.7358778625954199,
+      "need": 0.732824427480916,
+      "mean_SE": 0.28468064671133325
+    },
+    {
+      "tier": "hard",
+      "SE_half": "high_SE",
+      "n": 357,
+      "call_rate": 0.40532212885154056,
+      "abstain_rate": 0.04047619047619047,
+      "fail_rate": 0.9319327731092437,
+      "need": 0.8935574229691877,
+      "mean_SE": 1.779405282235292
+    }
+  ]
+}

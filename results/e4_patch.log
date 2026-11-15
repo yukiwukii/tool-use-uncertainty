@@ -1,0 +1,50 @@
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:07,  3.63s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.46s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.33s/it]
+[sparse_tool] shared suffix tokens S=63
+pairs=300 fail-matched=1.00 cells=37
+replies 600 in 3222s
+[sweep] first batch 63s; est total 157 min
+[sweep] done in 19125s
+direction  hi->lo  lo->hi
+layer                    
+0          -0.002   0.005
+1          -0.011   0.027
+2          -0.015   0.012
+3          -0.031   0.041
+4          -0.037   0.047
+5          -0.031   0.058
+6          -0.036   0.086
+7          -0.028   0.097
+8          -0.097   0.126
+9          -0.082   0.118
+10         -0.040   0.160
+11          0.004   0.182
+12          0.089   0.121
+13          0.018   0.148
+14          0.064   0.103
+15         -0.085   0.083
+16         -0.150   0.173
+17          0.106   0.102
+18          0.263  -0.120
+19          0.472  -0.200
+20          0.467  -0.333
+21          0.549  -0.357
+22          0.752  -0.415
+23          0.760  -0.355
+24          0.771  -0.347
+25          0.816  -0.239
+26          0.771  -0.338
+27          0.687  -0.367
+28          0.686  -0.328
+29          0.609  -0.352
+30          0.628  -0.340
+31          0.643  -0.291
+32          0.604  -0.332
+33          0.593  -0.449
+34          0.574  -0.530
+35          0.578  -0.530
+best patch layers [25, 26, 24]
+[dims] first batch 69s; est total 171 min
+[dims] done in 12882s
+[pos] first batch 357s; est total 297 min
+[pos] done in 26847s
+exit=0 elapsed=62095s

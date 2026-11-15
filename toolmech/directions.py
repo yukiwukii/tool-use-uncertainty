@@ -132,6 +132,45 @@ def stratified_dm(X, lab, score, cells=("env", "tier"), top=1 / 3, min_n=3, keep
     return unit(acc / wsum), {"cells": n_cells, "tasks": n_tasks}
 
 
+def stratified_dm_matched(X, lab, score="SE", match="fail_rate", cells=("env", "tier"), top=1 / 3,
+                          tol=0.1, min_n=3):
+    """PLAN.md M3 step 2, second option: inside each cell, pair every top-third-`score`
+    task with an unused bottom-third task whose `match` differs by at most `tol`
+    (greedy, nearest first); difference of the matched means, weighted by pairs.
+    Uses all tasks rather than only majority-correct ones."""
+    use = lab[score].notna().to_numpy() & lab[match].notna().to_numpy()
+    acc, wsum, n_cells, n_tasks = 0.0, 0.0, 0, 0
+    for _, idx in lab[use].groupby(list(cells)).groups.items():
+        idx = np.asarray(idx)
+        s = lab.loc[idx, score].to_numpy(dtype=float)
+        f = lab.loc[idx, match].to_numpy(dtype=float)
+        if np.unique(s).size < 2:
+            continue
+        q_lo, q_hi = np.quantile(s, [top, 1 - top])
+        hi_m, lo_m = s >= q_hi, s <= q_lo
+        if q_hi == q_lo:
+            med = np.median(s)
+            hi_m, lo_m = s > med, s <= med
+        lo_free = list(np.where(lo_m)[0])
+        H, L = [], []
+        for i in np.where(hi_m)[0][np.argsort(-s[hi_m])]:
+            if not lo_free:
+                break
+            d = np.abs(f[lo_free] - f[i])
+            j = int(np.argmin(d))
+            if d[j] <= tol and s[lo_free[j]] < s[i]:
+                H.append(idx[i]); L.append(idx[lo_free.pop(j)])
+        if len(H) < min_n:
+            continue
+        acc = acc + len(H) * (X[H].mean(0) - X[L].mean(0))
+        wsum += len(H)
+        n_cells += 1
+        n_tasks += 2 * len(H)
+    if wsum == 0:
+        return np.full(X.shape[1], np.nan), {"cells": 0, "tasks": 0}
+    return unit(acc / wsum), {"cells": n_cells, "tasks": n_tasks}
+
+
 # Geometry directions: name -> fn(X_layer, lab, cfg) -> (vector, info). Shared with geometry.py
 # so bootstrap and null refits use exactly the same estimator.
 def _ridge(col):
@@ -144,6 +183,10 @@ def _dm(col):
 
 def _se_dm(X, lab, cfg):
     return stratified_dm(X, lab, "SE", keep=(lab["fail_rate"] < 0.5).to_numpy())
+
+
+def _se_dm_fm(X, lab, cfg):
+    return stratified_dm_matched(X, lab, "SE", "fail_rate")
 
 
 def _act_dm(X, lab, cfg):
@@ -161,6 +204,7 @@ GEOMETRY_SPECS = {
     "act": _dm("act"),
     "diff": _dm("diff"),
     "SE^dm": _se_dm,
+    "SE^dm_fm": _se_dm_fm,      # fail-matched variant (M3 step 2, second option)
     "act^dm": _act_dm,
 }
 
@@ -255,7 +299,7 @@ def run_mode(cfg, mode, surface=True):
             _, (r, mu, sd) = ridge_dir(Xl, ltr[y], P["ridge_alpha"])
             s = pd.Series(r.predict((Xt - mu) / sd), index=lte.index)
             rows += _rows(mode, l, y, "ridge", scoped_metrics(lte, y, s, False))
-        for name, y in (("SE^dm", "SE"), ("act^dm", "act")):
+        for name, y in (("SE^dm", "SE"), ("SE^dm_fm", "SE"), ("act^dm", "act")):
             s = pd.Series(Xt @ dirs[name][l], index=lte.index)
             rows += _rows(mode, l, y, f"{name}_projection", scoped_metrics(lte, y, s, y == "act"))
         # norm channel (Stolfo et al.): does ||h|| alone predict SE / need?

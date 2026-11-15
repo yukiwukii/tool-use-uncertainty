@@ -1,0 +1,45 @@
+== 10:39 start sepost (try 1)
+INFO 11-15 10:39:22 [__init__.py:239] Automatically detected platform cuda.
+INFO 11-15 10:39:36 [config.py:717] This model supports multiple tasks: {'generate', 'score', 'classify', 'reward', 'embed'}. Defaulting to 'generate'.
+INFO 11-15 10:39:36 [llm_engine.py:240] Initializing a V0 LLM engine (v0.8.5) with config: model='Qwen/Qwen3-4B-Instruct-2507', speculative_config=None, tokenizer='Qwen/Qwen3-4B-Instruct-2507', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=16384, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=0, served_model_name=Qwen/Qwen3-4B-Instruct-2507, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":256}, use_cached_outputs=False, 
+INFO 11-15 10:39:38 [cuda.py:292] Using Flash Attention backend.
+INFO 11-15 10:39:39 [parallel_state.py:1004] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 11-15 10:39:39 [model_runner.py:1108] Starting to load model Qwen/Qwen3-4B-Instruct-2507...
+INFO 11-15 10:39:39 [weight_utils.py:265] Using model weights format ['*.safetensors', '*.bin', '*.pt']
+Loading safetensors checkpoint shards:   0% Completed | 0/3 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  33% Completed | 1/3 [00:00<00:01,  1.61it/s]
+Loading safetensors checkpoint shards:  67% Completed | 2/3 [00:01<00:00,  1.55it/s]
+Loading safetensors checkpoint shards: 100% Completed | 3/3 [00:01<00:00,  2.20it/s]
+
+INFO 11-15 10:39:41 [loader.py:458] Loading weights took 1.37 seconds
+INFO 11-15 10:39:41 [model_runner.py:1140] Model loading took 7.6065 GiB and 1.570244 seconds
+INFO 11-15 10:39:43 [worker.py:287] Memory profiling takes 2.10 seconds
+INFO 11-15 10:39:43 [worker.py:287] the current vLLM instance can use total_gpu_memory (44.42GiB) x gpu_memory_utilization (0.50) = 22.21GiB
+INFO 11-15 10:39:43 [worker.py:287] model weights take 7.61GiB; non_torch_memory takes 0.06GiB; PyTorch activation peak memory takes 1.46GiB; the rest of the memory reserved for KV Cache is 13.08GiB.
+INFO 11-15 10:39:44 [executor_base.py:112] # cuda blocks: 5954, # CPU blocks: 1820
+INFO 11-15 10:39:44 [executor_base.py:117] Maximum concurrency for 16384 tokens per request: 5.81x
+INFO 11-15 10:39:47 [model_runner.py:1450] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:28,  1.19it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:26,  1.26it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:02<00:24,  1.28it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:03<00:23,  1.31it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:03<00:22,  1.33it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:04<00:21,  1.32it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:05<00:21,  1.29it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:06<00:20,  1.30it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:06<00:19,  1.31it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:07<00:19,  1.30it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:08<00:18,  1.32it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:09<00:16,  1.42it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:09<00:13,  1.58it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:09<00:12,  1.72it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:10<00:11,  1.80it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:10<00:10,  1.87it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:11<00:09,  1.92it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:11<00:08,  1.94it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:12<00:08,  1.98it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:12<00:07,  2.03it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:13<00:06,  2.03it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:13<00:06,  2.05it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:14<00:05,  2.09it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:14<00:05,  2.07it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:15<00:04,  2.10it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:15<00:04,  2.10it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:16<00:03,  2.02it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:16<00:03,  1.98it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:17<00:02,  2.03it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:17<00:02,  2.04it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:18<00:01,  2.08it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:18<00:01,  2.08it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:19<00:00,  2.07it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:19<00:00,  2.10it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:20<00:00,  1.94it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:20<00:00,  1.73it/s]
+INFO 11-15 10:40:07 [model_runner.py:1592] Graph capturing finished in 20 secs, took 0.37 GiB
+INFO 11-15 10:40:07 [llm_engine.py:437] init engine (profile, create kv cache, warmup model) took 26.45 seconds
+WARNING 11-15 10:43:25 [scheduler.py:1768] Sequence group 331_parallel_sample_3 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+[sepost] multihop_test_current_corrupt: 1374 P3 prompts in 1196s
+[sepost] multihop_test_current_real: 1500 P3 prompts in 1341s
+[sepost] multihop_test_force_tool_corrupt: 1682 P3 prompts in 1515s
+[sepost] multihop_test_force_tool_real: 1680 P3 prompts in 1460s
+[sepost] multihop_train_current_corrupt: 548 P3 prompts in 453s
+[sepost] multihop_train_current_real: 579 P3 prompts in 478s
+[sepost] multihop_train_force_tool_corrupt: 648 P3 prompts in 559s
+[sepost] multihop_train_force_tool_real: 655 P3 prompts in 546s
+WARNING 11-15 12:51:01 [scheduler.py:1768] Sequence group 9004_parallel_sample_4 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=51
+[sepost] test_current_corrupt: 430 P3 prompts in 514s
+[sepost] test_current_real: 418 P3 prompts in 470s
+[sepost] test_force_tool_corrupt: 502 P3 prompts in 541s
+[sepost] test_force_tool_real: 476 P3 prompts in 499s
+WARNING 11-15 13:26:00 [scheduler.py:1768] Sequence group 10869_parallel_sample_1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=101
+[sepost] train_current_corrupt: 444 P3 prompts in 534s
+[sepost] train_current_real: 426 P3 prompts in 501s
+[sepost] train_force_tool_corrupt: 522 P3 prompts in 584s
+[sepost] train_force_tool_real: 496 P3 prompts in 548s
+[rank0]:[W1115 13:55:47.420205910 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+== 13:55 done sepost in 11793s

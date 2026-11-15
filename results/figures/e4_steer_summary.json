@@ -1,0 +1,25 @@
+{
+ "sparse_tool": {
+  "base_call_rate": 0.2222222222222222,
+  "slopes": [
+   {
+    "direction": "SE^dm",
+    "layer": 29,
+    "slope_dcall_per_dSE": -0.19920031888413733,
+    "max_abs_dSE": 0.2860024382396971,
+    "max_abs_dcall": 0.061111111111111116,
+    "n_k": 2
+   },
+   {
+    "direction": "random",
+    "layer": 29,
+    "slope_dcall_per_dSE": -0.0790664673918434,
+    "max_abs_dSE": 0.1419011884559402,
+    "max_abs_dcall": 0.01666666666666666,
+    "n_k": 2
+   }
+  ]
+ },
+ "base_SE": 0.5532948604995355,
+ "base_unparse": 0.14444444444444443
+}

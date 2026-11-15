@@ -5,4 +5,7 @@ __pycache__/
 # upstream harness: clone github.com/Trustworthy-ML-Lab/when2tool @ ef0cf1e and dump HF cesun/When2Tool into when2tool/data/
 when2tool/
 .gpu_job
-results/
+# residual activation dumps are 0.3-0.8 GB each (over GitHub's 100 MB limit); regenerate with E2
+results/e2/resid_*.pt
+*.tmp
+nvim-linux-x86_64.tar.gz

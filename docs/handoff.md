@@ -15,6 +15,26 @@ Status as of 2026-11-14 14:00 UTC. Read `PLAN.md` first, especially its **revisi
   - fp32 for all HF passes.
 - Git: 4 commits on `main` since the initial one, latest `7d2cfce`. Working tree clean apart from an unrelated `nvim-linux-x86_64.tar.gz` (not ours; leave it out of commits). Commit only when the user asks.
 
+## Overnight run (started 2026-11-14 ~15:40 UTC; user asleep, asked to run as much as possible)
+
+**State at 15:40 UTC.** E2 done and passed (same-window HF–vLLM agreement 99.0–99.9% on all four chunks). E3 done for both modes (`results/e3/`, logs `results/e3_*.log`); rerun added `SE^dm_fm` (fail-matched variant, M3 step 2 second option: 20 cells / 214 tasks vs 9 / 125 for `SE^dm`).
+
+**Running (check `ps -eo pid,args | grep toolmech`):**
+- `results/run_vllm_chain.sh` (log lines `==` in each step's log): steer phases A,B → E5 conversations → E5 SE_post sampling → steer phases C,D,E,F. Retries vLLM start-up up to 4×.
+- `results/run_hf_chain.sh` → waits for patching (`toolmech.patch`, log `results/e4_patch.log`) and `results/e5/CONV_DONE`, then `trajectory --stage resid`.
+- Afterwards (CPU): `python -m toolmech.trajectory --stage analyze`, `python -m toolmech.plots`.
+
+**New code (uncommitted, tested on smoke runs):**
+- `vsteer.py`: steering inside vLLM V0 (`VLLM_USE_V1=0`); mask built in a pre-hook on `embed_tokens` (vLLM's compile wrapper skips hooks on `Qwen3Model`). Verified against `hf.steer`: steered tool-token log-prob shifts match (e.g. +11.35 vs +11.39), residual differences at bf16 noise.
+- `steer.py`: E4 sweeps on 300 test tasks (100/tier); readouts from real replies; queue phases A–F (see docstring), one parquet per condition in `results/e4/steer/`, resumable. ~10 min/condition with patching alongside (before raising `max_num_seqs` to 1024).
+- `patch.py`: M5b, 300 fail-matched pairs (37 cells), shared suffix S = 63 tokens, TUL along each recipient's fixed greedy reply (256 tokens, float64, no −16 floor), full / 1-D (`SE^dm`, `act^dm`, random) / per-position patches.
+- `corrupt.py`, `conversations.py`, `trajectory.py`: E5 (force_tool + current, single-hop 150/tier test + train, multi-hop all; greedy; corrupt first successful tool result; P1/P2/P3 from When2Tool's per-round prompt texts).
+- `plots.py`: E3/E4 summaries and figures to `results/figures/`.
+
+**E3 headline (sparse_tool):** SE decodes at Spearman 0.80 (within tier 0.75, within cell 0.42; surface baseline 0.62). Calls follow tier much more than SE: easy low/high SE call 2%/4%, hard 34%/41%. Whitened cosines SE vs act ≈ 0.00, SE^dm vs act^dm 0.02. `SE^dm` projection decodes SE only at 0.38 (weak direction; bootstrap CI vs act^dm [−0.21, 0.71]).
+
+**Deviations to add to REPORT.md:** 13) steering generated in vLLM bf16 with a verified hook; 14) steering grid prioritised (phases A–F) after timing; directions from the primary mode used for both modes; 15) unparseable rule relative to baseline (+10 points), since 14% of unsteered no-tool answers are unparseable at 1024 tokens; 16) E4 "accuracy" is direct-answer accuracy of the first reply (no full agent loop under steering); 17) per-position patching on 100 pairs; 18) `SE^dm_fm` added; 19) E5 conversations greedy, first successful tool result corrupted, subsets of single-hop tasks.
+
 ## Environment
 
 - Project root `/tool-use-uncertainty`. Untracked by design: `when2tool/`, `.venv/`, `.hf_cache/`, `results/` (in `.gitignore`).
