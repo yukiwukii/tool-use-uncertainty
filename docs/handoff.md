@@ -1,5 +1,8 @@
 # Handoff: implementing PLAN.md (toolmech)
 
+> Latest status and results: see [results_2026-11-15.md](results_2026-11-15.md).
+
+
 Status as of 2026-11-14 14:00 UTC. Read `PLAN.md` first, especially its **revision log** (6 items): the prompt mode, how tool use is measured, the steering directions and E4 all changed after E0. This file covers the environment, what has run and its results, what is running, the code, and what to do next.
 
 ## TL;DR

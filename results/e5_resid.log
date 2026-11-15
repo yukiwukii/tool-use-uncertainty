@@ -48,3 +48,8 @@ Traceback (most recent call last):
     down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
 torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 434.00 MiB. GPU 0 has a total capacity of 44.42 GiB of which 298.50 MiB is free. Process 57607 has 23.90 GiB memory in use. Including non-PyTorch memory, this process has 20.21 GiB memory in use. Of the allocated memory 18.70 GiB is allocated by PyTorch, and 1.20 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+== 15:37 restart resid budget 3000
+nohup: failed to run command '.venv/bin/python': No such file or directory
+== 15:37 restart resid budget 3000
+/bin/bash: line 1: .venv/bin/python: No such file or directory
+== 15:37 resid exit=0

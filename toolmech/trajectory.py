@@ -245,10 +245,11 @@ def main():
     ap.add_argument("--stage", required=True, choices=["resid", "sepost", "analyze"])
     ap.add_argument("--gpu_util", type=float, default=0.85)
     ap.add_argument("--layer", type=int, default=None)
+    ap.add_argument("--token_budget", type=int, default=12000)
     a = ap.parse_args()
     cfg = load_config()
     if a.stage == "resid":
-        resid_stage(cfg)
+        resid_stage(cfg, a.token_budget)
     elif a.stage == "sepost":
         sepost_stage(cfg, a.gpu_util)
     else:
